@@ -1,0 +1,12 @@
+-main ApplicationMain 
+-lib openfl
+-cp src
+-D tools=1.2.6
+-D web
+-swf-version 11.2
+-swf bin/flash/bin/pewpew.swf
+-swf-header 800:480:60:000000
+-cp bin/flash/haxe
+#--remap nme:flash
+--no-inline
+-debug
