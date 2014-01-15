@@ -16,6 +16,7 @@ class Main extends Sprite
 	var ship:Ship;
 	var leftArrowDown:Bool;
 	var rightArrowDown:Bool;
+	var spaceBar:Bool;
 	var inited:Bool;
 
 	/* ENTRY POINT */
@@ -66,19 +67,24 @@ class Main extends Sprite
 	
 	function keyDown(e:KeyboardEvent)
 	{
+		if (e.keyCode == 32) spaceBar=true; 
 		if (e.keyCode == 37) leftArrowDown=true; 
 		if (e.keyCode == 39) rightArrowDown=true; 
 	}
 	
 	function keyUp(e:KeyboardEvent)
 	{
+		if (e.keyCode == 32) spaceBar=false; 
 		if (e.keyCode == 37) leftArrowDown=false; 
 		if (e.keyCode == 39) rightArrowDown=false; 
 	}
 
 	function atRefresh(e)
 	{
-		
+		if (spaceBar) 
+		{
+			
+		}
 		if (leftArrowDown) ship.x -= 3;
 		if (rightArrowDown) ship.x += 3;
 	}
