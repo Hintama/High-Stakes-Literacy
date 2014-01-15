@@ -14,8 +14,8 @@ import flash.events.KeyboardEvent;
 class Main extends Sprite 
 {
 	var ship:Ship;
-	var leftKey:Bool;
-	var rightKey:Bool;
+	var leftArrowDown:Bool;
+	var rightArrowDown:Bool;
 	var inited:Bool;
 
 	/* ENTRY POINT */
@@ -48,8 +48,11 @@ class Main extends Sprite
 		addEventListener(Event.ADDED_TO_STAGE, added);
 		Lib.current.stage.addEventListener(KeyboardEvent.KEY_DOWN, keyDown);
 		Lib.current.stage.addEventListener(KeyboardEvent.KEY_UP, keyUp);
+		Lib.current.stage.addEventListener(Event.ENTER_FRAME, atRefresh);
+		ship = new Ship(50, 50);
+		this.addChild(ship);
 	}
-
+	
 	function added(e) 
 	{
 		removeEventListener(Event.ADDED_TO_STAGE, added);
@@ -61,6 +64,23 @@ class Main extends Sprite
 		#end
 	}
 	
+	function keyDown(e:KeyboardEvent)
+	{
+		if (e.keyCode == 37) leftArrowDown=true; 
+		if (e.keyCode == 39) rightArrowDown=true; 
+	}
+	
+	function keyUp(e:KeyboardEvent)
+	{
+		if (e.keyCode == 37) leftArrowDown=false; 
+		if (e.keyCode == 39) rightArrowDown=false; 
+	}
+
+	function atRefresh(e)
+	{
+		if (leftArrowDown) ship.x -= 3;
+		if (rightArrowDown) ship.x += 3;
+	}
 	public static function main() 
 	{
 		// static entry point

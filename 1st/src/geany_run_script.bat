@@ -1,0 +1,6 @@
+neko "Ship"
+
+pause
+del "%0"
+
+pause
