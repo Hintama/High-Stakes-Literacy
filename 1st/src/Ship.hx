@@ -20,4 +20,5 @@ class Ship extends Sprite
 		this.y = y;
 	}
 	
+	
 }

@@ -78,6 +78,7 @@ class Main extends Sprite
 
 	function atRefresh(e)
 	{
+		
 		if (leftArrowDown) ship.x -= 3;
 		if (rightArrowDown) ship.x += 3;
 	}
