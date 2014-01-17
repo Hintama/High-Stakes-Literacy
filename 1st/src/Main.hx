@@ -5,6 +5,9 @@ import flash.events.Event;
 import flash.Lib;
 import src.Ship;
 import flash.events.KeyboardEvent;
+import flash.display.Bitmap;
+import flash.display.BitmapData;
+import openfl.Assets;
 
 /**
  * ...
@@ -17,6 +20,8 @@ class Main extends Sprite
 	var leftArrowDown:Bool;
 	var rightArrowDown:Bool;
 	var inited:Bool;
+	public static var game:Main;
+	public var bullets:List<Bullet>;
 
 	/* ENTRY POINT */
 	
@@ -44,7 +49,8 @@ class Main extends Sprite
 
 	public function new() 
 	{
-		super();	
+		super();
+		game = this;
 		addEventListener(Event.ADDED_TO_STAGE, added);
 		Lib.current.stage.addEventListener(KeyboardEvent.KEY_DOWN, keyDown);
 		Lib.current.stage.addEventListener(KeyboardEvent.KEY_UP, keyUp);
@@ -79,8 +85,11 @@ class Main extends Sprite
 	function atRefresh(e)
 	{
 		
-		if (leftArrowDown) ship.x -= 3;
-		if (rightArrowDown) ship.x += 3;
+		if (leftArrowDown) ship.left();
+		if (rightArrowDown) ship.right();
+		ship.act();
+		for (bullet in bullets) bullet.act();
+		
 	}
 	public static function main() 
 	{
