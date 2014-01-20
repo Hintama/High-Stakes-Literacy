@@ -10,7 +10,7 @@ import flash.Lib;
  * ...
  * @author Johnnyappseed
  */
-class Ship extends Sprite
+class Enemy extends Sprite
 {
 	var v:Float;
 
@@ -34,18 +34,18 @@ class Ship extends Sprite
 		this.v += 1;
 	}
 	
-	public function shoot()
-	{
-		var b:Bullet = new Bullet(Std.int(this.x + this.width / 2), Std.int(this.y), true);
-		Main.game.bullets.add(b);
-		Main.game.addChild(b);
-	}
+        public function shoot()
+        {
+            var b:Bullet = new Bullet(Std.int(this.x + this.width / 2), Std.int(this.y), true);
+            Main.game.bullets.add(b);
+            Main.game.addChild(b);
+        }
 	
 	public function act()
 	{
         if (this.x < 0 && this.v<0) this.v = 0;
         if (this.x > 800 - this.width && this.v>0) this.v = 0;
-		this.v *= .95; 
+		v *= .95; 
 		this.x += this.v;
 	}
 	

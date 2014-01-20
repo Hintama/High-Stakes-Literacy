@@ -2,12 +2,13 @@ package ;
 
 import flash.display.Sprite;
 import flash.events.Event;
-import flash.Lib;
-import src.Ship;
+import flash.events.MouseEvent;
 import flash.events.KeyboardEvent;
-import flash.display.Bitmap;
+import flash.Lib;
 import flash.display.BitmapData;
+import flash.display.Bitmap;
 import openfl.Assets;
+import src.Ship;
 
 /**
  * ...
@@ -16,12 +17,14 @@ import openfl.Assets;
 
 class Main extends Sprite 
 {
-	var ship:Ship;
+	var inited:Bool;
 	var leftArrowDown:Bool;
 	var rightArrowDown:Bool;
-	var inited:Bool;
+    public var ship:Ship;
 	public static var game:Main;
 	public var bullets:List<Bullet>;
+	var counter:Int;
+	
 
 	/* ENTRY POINT */
 	
@@ -51,11 +54,13 @@ class Main extends Sprite
 	{
 		super();
 		game = this;
+        bullets = new List<Bullet>();
+        counter = 0;
 		addEventListener(Event.ADDED_TO_STAGE, added);
 		Lib.current.stage.addEventListener(KeyboardEvent.KEY_DOWN, keyDown);
 		Lib.current.stage.addEventListener(KeyboardEvent.KEY_UP, keyUp);
 		Lib.current.stage.addEventListener(Event.ENTER_FRAME, atRefresh);
-		ship = new Ship(50, 50);
+		ship = new Ship(400,400);
 		this.addChild(ship);
 	}
 	
@@ -73,7 +78,8 @@ class Main extends Sprite
 	function keyDown(e:KeyboardEvent)
 	{
 		if (e.keyCode == 37) leftArrowDown=true; 
-		if (e.keyCode == 39) rightArrowDown=true; 
+		if (e.keyCode == 39) rightArrowDown = true; 
+		if (e.keyCode == 32) ship.shoot();
 	}
 	
 	function keyUp(e:KeyboardEvent)
@@ -84,7 +90,7 @@ class Main extends Sprite
 
 	function atRefresh(e)
 	{
-		
+		counter += 1;
 		if (leftArrowDown) ship.left();
 		if (rightArrowDown) ship.right();
 		ship.act();
