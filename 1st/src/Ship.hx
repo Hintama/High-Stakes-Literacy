@@ -1,4 +1,4 @@
-package src;
+package ;
 
 import flash.display.Bitmap;
 import flash.display.Sprite;
@@ -13,12 +13,18 @@ import flash.Lib;
 class Ship extends Sprite
 {
 	var v:Float;
+	public var isAlive:Bool;
 
 	public function new(x:Int, y:Int) 
 	{
 		super();
+		isAlive = true;
 		var main_ship = new Bitmap(Assets.getBitmapData("img/WhiteShip.png"));
-		addChild(main_ship);
+		var sprite = new Sprite();
+		sprite.addChild(main_ship);
+		sprite.x = -main_ship.width / 2;
+		sprite.y = -main_ship.height / 2;
+		this.addChild(sprite);
 		this.x = x;
 		this.y = y;
 		this.v = 0;
@@ -36,15 +42,32 @@ class Ship extends Sprite
 	
 	public function shoot()
 	{
-		var b:Bullet = new Bullet(Std.int(this.x + this.width / 2), Std.int(this.y), true);
-		Main.game.bullets.add(b);
-		Main.game.addChild(b);
+		if (isAlive)
+		{
+			var b:Bullet = new Bullet(Std.int(this.x), Std.int(this.y-this.height/2), true);
+			Main.game.bullets.add(b);
+			Main.game.addChild(b);
+		}
+	}
+	
+	public function kill()
+	{
+		Main.game.removeChild(this);
+		isAlive = false;
 	}
 	
 	public function act()
 	{
-        if (this.x < 0 && this.v<0) this.v = 0;
-        if (this.x > 800 - this.width && this.v>0) this.v = 0;
+        if (this.x < this.width / 2 && this.v < 0) 
+		{
+			this.v = 0;
+			this.x = this.width / 2;
+		}
+        if (this.x > 800 - this.width/2 && this.v > 0) 
+		{
+			this.v = 0;
+			this.x = 800 -this.width / 2;
+		}
 		this.v *= .95; 
 		this.x += this.v;
 	}

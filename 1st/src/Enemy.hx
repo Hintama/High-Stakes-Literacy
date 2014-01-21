@@ -1,4 +1,4 @@
-package src;
+package ;
 
 import flash.display.Bitmap;
 import flash.display.Sprite;
@@ -12,41 +12,43 @@ import flash.Lib;
  */
 class Enemy extends Sprite
 {
-	var v:Float;
+	var refx:Int;
+	var counter:Int;
+	var period:Float;
 
 	public function new(x:Int, y:Int) 
 	{
 		super();
-		var main_ship = new Bitmap(Assets.getBitmapData("img/WhiteShip.png"));
-		addChild(main_ship);
+		var img = new Bitmap(Assets.getBitmapData("img/spaceship128.png"));
+		var sprite = new Sprite();
+		sprite.addChild(img);
+		sprite.x = -img.width / 2;
+		sprite.y = -img.height / 2;
+		this.addChild(sprite);
+		this.rotation = 180;
+		this.refx = x;
 		this.x = x;
 		this.y = y;
-		this.v = 0;
+		this.counter = Std.int(Math.random() * 1000);
+		this.period = Math.random() * 3 + 1;
 	}
-	
-	public function left()
+	public function kill()
 	{
-		this.v -= 1;
+		Main.game.removeChild(this);
+		Main.game.enemies.remove(this);
 	}
-	
-	public function right()
+	public function shoot()
 	{
-		this.v += 1;
+		var b:Bullet = new Bullet(Std.int(this.x + this.width / 2), Std.int(this.y), true);
+		Main.game.bullets.add(b);
+		Main.game.addChild(b);
 	}
-	
-        public function shoot()
-        {
-            var b:Bullet = new Bullet(Std.int(this.x + this.width / 2), Std.int(this.y), true);
-            Main.game.bullets.add(b);
-            Main.game.addChild(b);
-        }
 	
 	public function act()
 	{
-        if (this.x < 0 && this.v<0) this.v = 0;
-        if (this.x > 800 - this.width && this.v>0) this.v = 0;
-		v *= .95; 
-		this.x += this.v;
+        if (this.counter % 180 == 0) this.shoot();
+		this.counter += 1;
+		this.x = this.refx + 30 * Math.sin(2 * Math.PI * this.counter / 60.0 / this.period);
 	}
 	
 	

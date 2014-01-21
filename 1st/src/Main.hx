@@ -8,7 +8,6 @@ import flash.Lib;
 import flash.display.BitmapData;
 import flash.display.Bitmap;
 import openfl.Assets;
-import src.Ship;
 
 /**
  * ...
@@ -23,6 +22,7 @@ class Main extends Sprite
     public var ship:Ship;
 	public static var game:Main;
 	public var bullets:List<Bullet>;
+	public var enemies:List<Enemy>;
 	var counter:Int;
 	
 
@@ -55,6 +55,7 @@ class Main extends Sprite
 		super();
 		game = this;
         bullets = new List<Bullet>();
+        enemies = new List<Enemy>();
         counter = 0;
 		addEventListener(Event.ADDED_TO_STAGE, added);
 		Lib.current.stage.addEventListener(KeyboardEvent.KEY_DOWN, keyDown);
@@ -62,6 +63,17 @@ class Main extends Sprite
 		Lib.current.stage.addEventListener(Event.ENTER_FRAME, atRefresh);
 		ship = new Ship(400,400);
 		this.addChild(ship);
+		makeEnemies();
+	}
+	
+	public function makeEnemies()
+	{
+		for (i in 0...6)
+		{
+			var enemy = new Enemy(Std.int(100 + 600 / 5 * i), 100);
+			this.addChild(enemy);
+			enemies.add(enemy);
+		}
 	}
 	
 	function added(e) 
@@ -95,6 +107,7 @@ class Main extends Sprite
 		if (rightArrowDown) ship.right();
 		ship.act();
 		for (bullet in bullets) bullet.act();
+		for (enemy in enemies) enemy.act();
 		
 	}
 	public static function main() 
