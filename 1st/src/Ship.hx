@@ -14,9 +14,12 @@ class Ship extends Sprite
 {
 	var v:Float;
 	public var isAlive:Bool;
+	var health:Int;
+	var MAX_HEALTH = 5;
 
 	public function new(x:Int, y:Int) 
 	{
+		health = MAX_HEALTH;
 		super();
 		isAlive = true;
 		var main_ship = new Bitmap(Assets.getBitmapData("img/WhiteShip.png"));
@@ -30,6 +33,11 @@ class Ship extends Sprite
 		this.v = 0;
 	}
 	
+	public function reanimate()
+	{
+		isAlive = true; 
+		health = MAX_HEALTH;
+	}
 	public function left()
 	{
 		this.v -= 1;
@@ -52,8 +60,13 @@ class Ship extends Sprite
 	
 	public function kill()
 	{
-		Main.game.removeChild(this);
-		isAlive = false;
+		this.health -= 1;
+		if (health <= 0)
+		{
+				Main.game.displayMenu();
+				Main.game.removeChild(this);
+				isAlive = false;
+		}
 	}
 	
 	public function act()
@@ -68,7 +81,7 @@ class Ship extends Sprite
 			this.v = 0;
 			this.x = 800 -this.width / 2;
 		}
-		this.v *= .95; 
+		this.v *= .80; 
 		this.x += this.v;
 	}
 	

@@ -38,6 +38,8 @@ class Bullet extends Sprite
         var img = new Bitmap(Assets.getBitmapData("img/sprenemy1.png"));
 		var sprite = new Sprite();
 		sprite.addChild(img);
+		sprite.x = -img.width / 2;
+		sprite.y = -img.height / 2;
         this.addChild(sprite);
 	}
 	

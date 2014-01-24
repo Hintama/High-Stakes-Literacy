@@ -39,7 +39,7 @@ class Enemy extends Sprite
 	}
 	public function shoot()
 	{
-		var b:Bullet = new Bullet(Std.int(this.x + this.width / 2), Std.int(this.y), true);
+		var b:Bullet = new Bullet(Std.int(this.x), Std.int(this.y + this.height/2), false);
 		Main.game.bullets.add(b);
 		Main.game.addChild(b);
 	}
