@@ -17,7 +17,7 @@ class Ship extends Sprite
 	var health:Int;
 	var MAX_HEALTH = 5;
 
-	public function new(x:Int, y:Int) 
+	public function new(x:Int, y:Int, lvl:Int) 
 	{
 		health = MAX_HEALTH;
 		super();

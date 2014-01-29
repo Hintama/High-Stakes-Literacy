@@ -36,12 +36,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		#if flash
 		
-		className.set ("img/images.jpg", __ASSET__img_images_jpg);
-		type.set ("img/images.jpg", Reflect.field (AssetType, "image".toUpperCase ()));
-		className.set ("img/RedShip.gif", __ASSET__img_redship_gif);
-		type.set ("img/RedShip.gif", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/rocket.png", __ASSET__img_rocket_png);
 		type.set ("img/rocket.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("img/rocket_ship.png", __ASSET__img_rocket_ship_png);
+		type.set ("img/rocket_ship.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/spaceship.png", __ASSET__img_spaceship_png);
 		type.set ("img/spaceship.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/spaceship128.png", __ASSET__img_spaceship128_png);
@@ -56,12 +54,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		#elseif html5
 		
-		path.set ("img/images.jpg", "img/images.jpg");
-		type.set ("img/images.jpg", Reflect.field (AssetType, "image".toUpperCase ()));
-		path.set ("img/RedShip.gif", "img/RedShip.gif");
-		type.set ("img/RedShip.gif", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/rocket.png", "img/rocket.png");
 		type.set ("img/rocket.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("img/rocket_ship.png", "img/rocket_ship.png");
+		type.set ("img/rocket_ship.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/spaceship.png", "img/spaceship.png");
 		type.set ("img/spaceship.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/spaceship128.png", "img/spaceship128.png");
@@ -515,9 +511,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 #if pixi
 #elseif flash
 
-class __ASSET__img_images_jpg extends flash.display.BitmapData { public function new () { super (0, 0); } }
-class __ASSET__img_redship_gif extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_rocket_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__img_rocket_ship_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_spaceship_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_spaceship128_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_spaceship1_final_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
@@ -526,7 +521,6 @@ class __ASSET__img_whiteship_png extends flash.display.BitmapData { public funct
 
 
 #elseif html5
-
 
 
 

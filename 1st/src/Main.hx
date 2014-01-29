@@ -80,7 +80,7 @@ class Main extends Sprite
 		Lib.current.stage.addEventListener(KeyboardEvent.KEY_UP, keyUp);
 		Lib.current.stage.addEventListener(Event.ENTER_FRAME, atRefresh);
 		text.addEventListener(MouseEvent.MOUSE_DOWN, playAgain_click);
-		ship = new Ship(400,400);
+		ship = new Ship(400,400,1);
 		this.addChild(ship);
 		makeEnemies();
 	}
@@ -110,7 +110,7 @@ class Main extends Sprite
 	{
 		for (i in 0...6)
 		{
-			var enemy = new Enemy(Std.int(100 + 600 / 5 * i), 100);
+			var enemy = new Enemy(Std.int(100 + 600 / 5 * i), 100, 1);
 			this.addChild(enemy);
 			enemies.add(enemy);
 		}
@@ -151,7 +151,7 @@ class Main extends Sprite
 		for (enemy in enemies) enemy.act();
 		if (enemies.length<10 && counter % 150 == 0)
 		{
-				var enemy = new Enemy(Std.int(Math.random()*600+100), 100);
+				var enemy = new Enemy(Std.int(Math.random()*600+100), 100,1);
 				this.addChild(enemy);
 				enemies.add(enemy);
 		}

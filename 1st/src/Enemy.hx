@@ -16,10 +16,15 @@ class Enemy extends Sprite
 	var counter:Int;
 	var period:Float;
 
-	public function new(x:Int, y:Int) 
+	public function new(x:Int, y:Int, lvl:Int) 
 	{
 		super();
-		var img = new Bitmap(Assets.getBitmapData("img/spaceship128.png"));
+		var img = new Bitmap(Assets.getBitmapData("img/sprenemy1.png"));
+		if (lvl == 2)
+		{
+			var img = new Bitmap(Assets.getBitmapData("img/spaceship128.png"));
+		}
+		
 		var sprite = new Sprite();
 		sprite.addChild(img);
 		sprite.x = -img.width / 2;
