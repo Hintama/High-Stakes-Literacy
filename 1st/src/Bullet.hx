@@ -35,7 +35,9 @@ class Bullet extends Sprite
 	{
 		CDTDestruction = 60;
 		this.removeChildAt(0);
-        var img = new Bitmap(Assets.getBitmapData("img/sprenemy1.png"));
+        var img = new Bitmap(Assets.getBitmapData("img/explosion1.png"));
+		img.height = 100;
+		img.width = 100; 
 		var sprite = new Sprite();
 		sprite.addChild(img);
 		sprite.x = -img.width / 2;

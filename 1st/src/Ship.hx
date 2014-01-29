@@ -81,7 +81,7 @@ class Ship extends Sprite
 			this.v = 0;
 			this.x = 800 -this.width / 2;
 		}
-		this.v *= .80; 
+		this.v *= .85; 
 		this.x += this.v;
 	}
 	

@@ -36,6 +36,12 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		#if flash
 		
+		className.set ("img/explosion1.png", __ASSET__img_explosion1_png);
+		type.set ("img/explosion1.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("img/explosion2.png", __ASSET__img_explosion2_png);
+		type.set ("img/explosion2.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("img/explosion3.png", __ASSET__img_explosion3_png);
+		type.set ("img/explosion3.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/rocket.png", __ASSET__img_rocket_png);
 		type.set ("img/rocket.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/rocket_ship.png", __ASSET__img_rocket_ship_png);
@@ -54,6 +60,12 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		#elseif html5
 		
+		path.set ("img/explosion1.png", "img/explosion1.png");
+		type.set ("img/explosion1.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("img/explosion2.png", "img/explosion2.png");
+		type.set ("img/explosion2.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("img/explosion3.png", "img/explosion3.png");
+		type.set ("img/explosion3.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/rocket.png", "img/rocket.png");
 		type.set ("img/rocket.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/rocket_ship.png", "img/rocket_ship.png");
@@ -511,6 +523,9 @@ class DefaultAssetLibrary extends AssetLibrary {
 #if pixi
 #elseif flash
 
+class __ASSET__img_explosion1_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__img_explosion2_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__img_explosion3_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_rocket_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_rocket_ship_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_spaceship_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
@@ -521,6 +536,9 @@ class __ASSET__img_whiteship_png extends flash.display.BitmapData { public funct
 
 
 #elseif html5
+
+
+
 
 
 
