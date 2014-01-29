@@ -168,7 +168,6 @@ class Main extends Sprite
 	function atRefresh(e)
 	{
 		counter += 1;
-		this.score += 1;
 		if (shootcd > 0) shootcd -= 1;
 		if (leftArrowDown) ship.left();
 		if (rightArrowDown) ship.right();
