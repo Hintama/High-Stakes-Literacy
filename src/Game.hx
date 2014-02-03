@@ -1,10 +1,13 @@
 package ;
 
+import flash.display.Bitmap;
+import flash.display.BitmapData;
 import flash.display.Sprite;
 import flash.Lib;
 import flash.text.TextField;
 import flash.text.TextFormat;
 import String;
+import openfl.Assets;
 
 /**
  * ...
