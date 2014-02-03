@@ -1,8 +1,6 @@
 package ;
 
-import flash.display.Bitmap;
 import flash.display.Sprite;
-import openfl.Assets;
 import flash.Lib;
 import flash.text.TextField;
 import flash.text.TextFormat;
@@ -21,6 +19,7 @@ class Game extends Sprite
 	public function new() 
 	{
 		super();
+		setUp();
 		this.x = 0;
 		this.y = 0;
 		var hiddenWord:Array<String> = new Array<String>();
@@ -49,6 +48,16 @@ class Game extends Sprite
 	function randomWord()
 	{
 		return "squirrel";
+	}
+	
+	function setUp()
+	{
+		var board = new Bitmap(Assets.getBitmapData("img/keyboard.png"));
+		var sprite = new Sprite();
+		sprite.addChild(board);
+		this.addChild(sprite);
+		//sprite.scaleX = 120;
+		//sprite.scaleY = 120;
 	}
 	
 }
