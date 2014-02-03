@@ -6,6 +6,7 @@ import openfl.Assets;
 import flash.Lib;
 import flash.text.TextField;
 import flash.text.TextFormat;
+import String;
 
 /**
  * ...
@@ -22,7 +23,18 @@ class Game extends Sprite
 		super();
 		this.x = 0;
 		this.y = 0;
-		word= randomWord();
+		var hiddenWord:Array<String> = new Array<String>();
+		word = randomWord();
+		for (x in 0...word.length)
+		{
+			hiddenWord[x] = word.charAt(x);
+		}
+		trace(hiddenWord);
+		textBoxSetup(word);
+		
+	}
+	function textBoxSetup(word:String)
+	{
 		ts = new TextFormat();
         ts.font = "Ubuntu";
         ts.size = 20;               
@@ -31,9 +43,8 @@ class Game extends Sprite
         wordBox.text = word;
         wordBox.setTextFormat(ts);
         this.addChild(wordBox);
-		wordBox.y = 200;
-		wordBox.x = 200;
-		
+		wordBox.y = 20;
+		wordBox.x = 400;
 	}
 	function randomWord()
 	{
