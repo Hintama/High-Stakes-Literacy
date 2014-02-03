@@ -10,16 +10,15 @@ import flash.display.BitmapData;
 import openfl.Assets;
 
 /**
- * ...
- * @author Hintama
- */
+ * ... */
 
 class Main extends Sprite 
 {
+
 	var inited:Bool;
+	public var game:Game;
 	public var key:String;
 	public var input:Int;
-
 	/* ENTRY POINT */
 	
 	function resize(e) 
@@ -32,21 +31,16 @@ class Main extends Sprite
 	{
 		if (inited) return;
 		inited = true;
-
-		// (your code here)
 		
-		// Stage:
-		// stage.stageWidth x stage.stageHeight @ stage.dpiScale
-		
-		// Assets:
-		// nme.Assets.getBitmapData("img/assetname.jpg");
 	}
 
 	/* SETUP */
 
 	public function new() 
 	{
-		super();	
+		super();
+		game = new Game();
+		this.addChild(game);
 		addEventListener(Event.ADDED_TO_STAGE, added);
 		Lib.current.stage.addEventListener(KeyboardEvent.KEY_DOWN, traceKey);
 		Lib.current.stage.addEventListener(KeyboardEvent.KEY_DOWN, traceKeyboard);
