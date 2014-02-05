@@ -26,17 +26,19 @@ class Game extends Sprite
 	var hiddenWord:Array<String>;
 	var guessedLetters:Array<String>;
 	var maskedWord:String;
+	var hangman:Bitmap;
+	var hangmanBoard:Sprite;
 
 	public function new() 
 	{
 		super();
-		//setUp();
 		health = 6;
 		this.x = 0;
 		this.y = 0;
 		hiddenWord = new Array<String>();
 		guessedLetters = [];
 		word = randomWord();
+		setUp();
 		for (x in 0...word.length)
 		{
 			hiddenWord[x] = word.charAt(x);
@@ -145,9 +147,14 @@ class Game extends Sprite
 				contains = true;
 			}
 		}
-		if (!contains)
+		if (guessedLetter != null)
 		{
-			health -= 1;
+			if (!contains)
+			{
+				health -= 1;
+				hangman = new Bitmap(Assets.getBitmapData("img/Hangman_" + Std.string(health) + ".png"));
+				hangmanBoard.addChild(hangman);
+			}
 		}
 		for (char in word)
 		{
@@ -189,12 +196,22 @@ class Game extends Sprite
 	
 	function setUp()
 	{
-		var board = new Bitmap(Assets.getBitmapData("img/keyboard.png"));
+		/*var board = new Bitmap(Assets.getBitmapData("img/keyboard.png"));
 		var sprite = new Sprite();
 		sprite.addChild(board);
 		this.addChild(sprite);
+		sprite.x = 325;
+		sprite.y = 200;*/
 		//sprite.scaleX = 120;
 		//sprite.scaleY = 120;
+		hangman = new Bitmap(Assets.getBitmapData("img/Hangman_" + Std.string(health) + ".png"));
+		hangmanBoard = new Sprite();
+		hangmanBoard.addChild(hangman);
+		hangmanBoard.x = 100;
+		hangmanBoard.y = 100;
+		hangmanBoard.width = 200;
+		hangmanBoard.height = 300;
+		this.addChild(hangmanBoard);
 		
 	}
 	
