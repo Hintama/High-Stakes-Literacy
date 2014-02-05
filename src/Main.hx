@@ -42,7 +42,7 @@ class Main extends Sprite
 		game = new Game();
 		this.addChild(menu);
 		this.addChild(game);
-		//game.y=500;
+		this.addChild(menu);
 		addEventListener(Event.ADDED_TO_STAGE, added);
 		Lib.current.stage.addEventListener(Event.ENTER_FRAME, atRefresh);
 	}
@@ -51,7 +51,31 @@ class Main extends Sprite
 	{
 		if (game.health == 0)
 		{
-			trace("fuck");
+			menu.menuOn = true;
+			menu.gameOn = false;
+			game.restart();
+		}
+		if (game.missingLetters == 0)
+		{
+			menu.menuOn = true;
+			menu.gameOn = false;
+			game.restart();
+		}
+		if (menu.menuOn)
+		{
+			menu.y = 0;
+		}
+		if (menu.gameOn)
+		{
+			game.y = 0;
+		}
+		if (!menu.menuOn)
+		{
+			menu.y = 500;
+		}
+		if (!menu.gameOn)
+		{
+			game.y = 500;
 		}
 	}
 	function added(e) 
