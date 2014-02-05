@@ -36,6 +36,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		#if flash
 		
+		className.set ("img/close.png", __ASSET__img_close_png);
+		type.set ("img/close.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/Hangman_0.png", __ASSET__img_hangman_0_png);
 		type.set ("img/Hangman_0.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/Hangman_1.png", __ASSET__img_hangman_1_png);
@@ -52,10 +54,22 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("img/Hangman_6.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/keyboard.png", __ASSET__img_keyboard_png);
 		type.set ("img/keyboard.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("img/L1button.png", __ASSET__img_l1button_png);
+		type.set ("img/L1button.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("img/L2button.png", __ASSET__img_l2button_png);
+		type.set ("img/L2button.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("img/L3button.png", __ASSET__img_l3button_png);
+		type.set ("img/L3button.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("img/Playbutton.png", __ASSET__img_playbutton_png);
+		type.set ("img/Playbutton.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("img/restart.png", __ASSET__img_restart_png);
+		type.set ("img/restart.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		
 		
 		#elseif html5
 		
+		path.set ("img/close.png", "img/close.png");
+		type.set ("img/close.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/Hangman_0.png", "img/Hangman_0.png");
 		type.set ("img/Hangman_0.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/Hangman_1.png", "img/Hangman_1.png");
@@ -72,6 +86,16 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("img/Hangman_6.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/keyboard.png", "img/keyboard.png");
 		type.set ("img/keyboard.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("img/L1button.png", "img/L1button.png");
+		type.set ("img/L1button.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("img/L2button.png", "img/L2button.png");
+		type.set ("img/L2button.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("img/L3button.png", "img/L3button.png");
+		type.set ("img/L3button.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("img/Playbutton.png", "img/Playbutton.png");
+		type.set ("img/Playbutton.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("img/restart.png", "img/restart.png");
+		type.set ("img/restart.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		
 		
 		#else
@@ -515,6 +539,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 #if pixi
 #elseif flash
 
+class __ASSET__img_close_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_hangman_0_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_hangman_1_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_hangman_2_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
@@ -523,9 +548,20 @@ class __ASSET__img_hangman_4_png extends flash.display.BitmapData { public funct
 class __ASSET__img_hangman_5_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_hangman_6_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_keyboard_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__img_l1button_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__img_l2button_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__img_l3button_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__img_playbutton_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__img_restart_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 
 
 #elseif html5
+
+
+
+
+
+
 
 
 
