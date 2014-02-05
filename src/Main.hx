@@ -17,6 +17,7 @@ class Main extends Sprite
 
 	var inited:Bool;
 	var game:Game;
+	var menu:Menu;
 	/* ENTRY POINT */
 	
 	function resize(e) 
@@ -37,8 +38,13 @@ class Main extends Sprite
 	public function new() 
 	{
 		super();
+		menu = new Menu ();
 		game = new Game();
+		game.y = 500;
+		menu.y = 0;
+		menu.x = 0;
 		this.addChild(game);
+		this.addChild(menu);
 		addEventListener(Event.ADDED_TO_STAGE, added);
 	}
 
