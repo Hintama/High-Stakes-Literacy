@@ -20,7 +20,7 @@ class Game extends Sprite
 	var word:String;
 	var wordBox:TextField;
 	var ts:TextFormat;
-	var health:Int;
+	public var health:Int;
 	var key:String;
 	var input:Int;
 	var hiddenWord:Array<String>;
@@ -48,12 +48,12 @@ class Game extends Sprite
 		
 	}
 	
-	public function traceKey(e : KeyboardEvent)
+	function traceKey(e : KeyboardEvent)
 	{
 		trace(e.keyCode);
 	}	
 	
-	public function traceKeyboard(e : KeyboardEvent)
+	function traceKeyboard(e : KeyboardEvent)
 	{
 		var contains:Bool;
 		contains = false;
