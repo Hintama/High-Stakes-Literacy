@@ -71,14 +71,14 @@ class Main extends Sprite
         counter = 0;
 		score = 0;
 		score_board = new Sprite();
-		score_board.graphics.drawRect(700, 0, 100, 100);
+		score_board.graphics.drawRect(600, 0, 100, 100);
 		var formate = new TextFormat();
 		formate.font = "Ubuntu";
-		formate.size = 30;
+		formate.size = 25;
 		formate.color = 0xFFFFFF;
 		board = new TextField();
-		board.text = Std.string(score);
-		board.width = 50;
+		board.text = "Kills: "+Std.string(score);
+		board.width = 100;
 		board.setTextFormat(formate);
 		score_board.addChild(board);
 		board.y = 50;
@@ -96,8 +96,8 @@ class Main extends Sprite
 		text.width = 400;
 		text.setTextFormat(txt);
 		menu.addChild(text);
-		text.y = 100;
-		text.x = 50;	
+		text.y = 400;
+		text.x = 240;	
 		addEventListener(Event.ADDED_TO_STAGE, added);
 		Lib.current.stage.addEventListener(KeyboardEvent.KEY_DOWN, keyDown);
 		Lib.current.stage.addEventListener(KeyboardEvent.KEY_UP, keyUp);
@@ -121,6 +121,21 @@ class Main extends Sprite
 		enemies = new List<Enemy>();
 		ship.reanimate();
 		makeEnemies();
+		score = 0;
+		score_board = new Sprite();
+		score_board.graphics.drawRect(600, 0, 100, 100);
+		var formate = new TextFormat();
+		formate.font = "Ubuntu";
+		formate.size = 25;
+		formate.color = 0xFFFFFF;
+		board = new TextField();
+		board.text = "Kills: "+Std.string(score);
+		board.width = 100;
+		board.setTextFormat(formate);
+		score_board.addChild(board);
+		board.y = 50;
+		board.x = 700;
+		this.addChild(score_board);
 		Lib.current.stage.focus = this.stage;
 	}
 	
@@ -168,6 +183,13 @@ class Main extends Sprite
 	function atRefresh(e)
 	{
 		counter += 1;
+		var formate = new TextFormat();
+		formate.font = "Ubuntu";
+		formate.size = 25;
+		formate.color = 0xFFFFFF;
+		board.text="Kills: "+Std.string(score);
+		board.width = 100;
+		board.setTextFormat(formate);
 		if (shootcd > 0) shootcd -= 1;
 		if (leftArrowDown) ship.left();
 		if (rightArrowDown) ship.right();
