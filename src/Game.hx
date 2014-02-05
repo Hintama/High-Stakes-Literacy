@@ -57,7 +57,7 @@ class Game extends Sprite
 		
 	}
 	
-	function restart()
+	public function restart()
 	{
 		health = 6;
 		word = randomWord();
@@ -180,7 +180,6 @@ class Game extends Sprite
 				guessedLettersBoard.setTextFormat(ts);
 				wordBox.text = maskedWord;
 				wordBox.setTextFormat(ts);
-				trace(guessedLetters);
 			}
 		}
 		if (key.length==0)
@@ -229,6 +228,7 @@ class Game extends Sprite
 				output += "_";
 			}
 		}
+		updateMissingLetters(output);
 		return output;
 	}
 	

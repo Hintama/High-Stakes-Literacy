@@ -2,8 +2,7 @@
 -lib openfl
 -lib actuate
 -cp src
--D tools=1.2.8
--D fdb
+-D tools=1.2.6
 -D web
 -swf-version 11.2
 -swf bin/flash/bin/HSL.swf

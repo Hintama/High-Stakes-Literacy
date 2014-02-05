@@ -18,29 +18,23 @@ import openfl.Assets;
  */
 class Menu extends Sprite
 {
+	public var menuOn:Bool;
+	public var gameOn:Bool;
 	
 	public function new() 
 	{
 		super();
+		
+		menuOn = true;
+		gameOn = false;
+		
 		this.x = 0;
 		this.y = 0;
 		var playButton = new Bitmap(Assets.getBitmapData("img/Playbutton.png"));
-		var menuBase = new Sprite();
-		menuBase.graphics.drawRect(400, 240, 800, 480);
-		menuBase.graphics.beginFill(0xFFFFFF);
-        this.addChild(menuBase);
-		var play = new Bitmap(Assets.getBitmapData("img/Playbutton.png"));
-        this.addChild(play);
 		var L1button = new Bitmap(Assets.getBitmapData("img/L1button.png"));
 		//var L2button = new Bitmap(Assets.getBitmapData("img/L2button.png"));
 		//var L3button = new Bitmap(Assets.getBitmapData("img/L3button.png"));
 
-		var L3button = new Bitmap(Assets.getBitmapData("img/L3button.png"));
-		play.addEventListener(MouseEvent.MOUSE_DOWN, playGame_mouse );
-		L1b.addEventListener(MouseEvent.MOUSE_DOWN, playL2_mouse);
-		//L2b.addEventListener(MouseEvent.MOUSE_DOWN, playL2_mouse );
-		//L3b.addEventListener(MouseEvent.MOUSE_DOWN, playL3_mouse );
-		
 		var play = new Sprite();
 		var L1b = new Sprite();
 		//var L2b = new Sprite();
@@ -49,6 +43,12 @@ class Menu extends Sprite
 		L1b.addChild(L1button);
 		//L2b.addChild(L2button);
 		//L3b.addChild(L3button);
+		
+		var L3button = new Bitmap(Assets.getBitmapData("img/L3button.png"));
+		play.addEventListener(MouseEvent.MOUSE_DOWN, playGame_mouse );
+		L1b.addEventListener(MouseEvent.MOUSE_DOWN, playL1_mouse);
+		//L2b.addEventListener(MouseEvent.MOUSE_DOWN, playL2_mouse );
+		//L3b.addEventListener(MouseEvent.MOUSE_DOWN, playL3_mouse );
 		
 		this.addChild(play);
 		this.addChild(L1b);
@@ -65,32 +65,26 @@ class Menu extends Sprite
 		
 	}	
 	public function playGame_mouse(e)
-	 {
-	 
-	 
+	{
+		menuOn = false;
+		gameOn = true; 
 	}
-	
 	public function playL1_mouse(e)
-	 {
-	 
-		 
-	 
+	{
+		menuOn = false;
+		gameOn = true; 
 	}
 	public function playL2_mouse(e)
-	 {
+	{
 	
-	 
 	}
 	public function playL3_mouse(e)
-	 {
+	{
 	 
-		 
-		 
-		 
 		 
 	}
 			
 		
-	}
+}
 	
 

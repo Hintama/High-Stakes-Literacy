@@ -38,8 +38,6 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		className.set ("img/close.png", __ASSET__img_close_png);
 		type.set ("img/close.png", Reflect.field (AssetType, "image".toUpperCase ()));
-<<<<<<< HEAD
-=======
 		className.set ("img/Hangman_0.png", __ASSET__img_hangman_0_png);
 		type.set ("img/Hangman_0.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/Hangman_1.png", __ASSET__img_hangman_1_png);
@@ -54,7 +52,6 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("img/Hangman_5.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/Hangman_6.png", __ASSET__img_hangman_6_png);
 		type.set ("img/Hangman_6.png", Reflect.field (AssetType, "image".toUpperCase ()));
->>>>>>> b0acbd04f4435a709241de890be78bd3154f5ea1
 		className.set ("img/keyboard.png", __ASSET__img_keyboard_png);
 		type.set ("img/keyboard.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/L1button.png", __ASSET__img_l1button_png);
@@ -73,8 +70,6 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		path.set ("img/close.png", "img/close.png");
 		type.set ("img/close.png", Reflect.field (AssetType, "image".toUpperCase ()));
-<<<<<<< HEAD
-=======
 		path.set ("img/Hangman_0.png", "img/Hangman_0.png");
 		type.set ("img/Hangman_0.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/Hangman_1.png", "img/Hangman_1.png");
@@ -89,7 +84,6 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("img/Hangman_5.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/Hangman_6.png", "img/Hangman_6.png");
 		type.set ("img/Hangman_6.png", Reflect.field (AssetType, "image".toUpperCase ()));
->>>>>>> b0acbd04f4435a709241de890be78bd3154f5ea1
 		path.set ("img/keyboard.png", "img/keyboard.png");
 		type.set ("img/keyboard.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/L1button.png", "img/L1button.png");
@@ -546,8 +540,6 @@ class DefaultAssetLibrary extends AssetLibrary {
 #elseif flash
 
 class __ASSET__img_close_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
-<<<<<<< HEAD
-=======
 class __ASSET__img_hangman_0_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_hangman_1_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_hangman_2_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
@@ -555,7 +547,6 @@ class __ASSET__img_hangman_3_png extends flash.display.BitmapData { public funct
 class __ASSET__img_hangman_4_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_hangman_5_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_hangman_6_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
->>>>>>> b0acbd04f4435a709241de890be78bd3154f5ea1
 class __ASSET__img_keyboard_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_l1button_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_l2button_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
@@ -575,8 +566,6 @@ class __ASSET__img_restart_png extends flash.display.BitmapData { public functio
 
 
 
-<<<<<<< HEAD
-=======
 
 
 
@@ -584,5 +573,4 @@ class __ASSET__img_restart_png extends flash.display.BitmapData { public functio
 
 
 
->>>>>>> b0acbd04f4435a709241de890be78bd3154f5ea1
 #end
