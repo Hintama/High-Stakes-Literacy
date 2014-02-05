@@ -20,41 +20,92 @@ class Game extends Sprite
 	var word:String;
 	var wordBox:TextField;
 	var ts:TextFormat;
-	var health:Int;
-	var key:String;
+	var guessedLettersBoard:TextField;
+	public var health:Int;
+	public var missingLetters:Int;
 	var input:Int;
 	var hiddenWord:Array<String>;
 	var guessedLetters:Array<String>;
 	var maskedWord:String;
+	var hangman:Bitmap;
+	var hangmanBoard:Sprite;
 
 	public function new() 
 	{
 		super();
-		//setUp();
 		health = 6;
-		this.x = 0;
-		this.y = 0;
-		hiddenWord = new Array<String>();
+		hiddenWord = [];
 		guessedLetters = [];
 		word = randomWord();
+		missingLetters = word.length;
+		setUp();
 		for (x in 0...word.length)
 		{
 			hiddenWord[x] = word.charAt(x);
 		}
 		maskedWord=guessingWord(hiddenWord, guessedLetters);
-		textBoxSetup(maskedWord);
+		wordBoxSetup(maskedWord);
+		guessedLettersBoard = new TextField();
+		guessedLettersBoard.text = guessedLettersToWord(guessedLetters);
+		guessedLettersBoard.setTextFormat(ts);
+		this.addChild(guessedLettersBoard);
+		guessedLettersBoard.y = 400;
+		guessedLettersBoard.x = 200;
+		guessedLettersBoard.width = 400;
 		//Lib.current.stage.addEventListener(KeyboardEvent.KEY_DOWN, traceKey);
 		Lib.current.stage.addEventListener(KeyboardEvent.KEY_DOWN, traceKeyboard);
 		
 	}
 	
-	public function traceKey(e : KeyboardEvent)
+	function restart()
+	{
+		health = 6;
+		word = randomWord();
+		guessedLetters = [];
+		hiddenWord = [];
+		missingLetters = word.length;
+		for (x in 0...word.length)
+		{
+			hiddenWord[x] = word.charAt(x);
+		}
+		hangmanBoard.removeChild(hangman);
+		hangman = new Bitmap(Assets.getBitmapData("img/Hangman_" + Std.string(health) + ".png"));
+		hangmanBoard.addChild(hangman);
+		maskedWord=guessingWord(hiddenWord, guessedLetters);
+        wordBox.text = maskedWord;
+        wordBox.setTextFormat(ts);
+		guessedLettersBoard.text = guessedLettersToWord(guessedLetters);
+		guessedLettersBoard.setTextFormat(ts);
+	}
+	
+	function updateMissingLetters(word:String)
+	{
+		missingLetters = 0;
+		for (x in 0...word.length)
+		{
+			if (word.charAt(x) == "_") missingLetters += 1;
+		}
+	}
+	
+	function guessedLettersToWord(letters:Array<String>)
+	{
+		var outPut:String;
+		outPut = "";
+		for (x in letters)
+		{
+			outPut += x;
+		}
+		return outPut;
+	}
+	function traceKey(e : KeyboardEvent)
 	{
 		trace(e.keyCode);
 	}	
 	
-	public function traceKeyboard(e : KeyboardEvent)
+	function traceKeyboard(e : KeyboardEvent)
 	{
+		var key:String;
+		key = "";
 		var contains:Bool;
 		contains = false;
 		input = e.keyCode;
@@ -111,23 +162,31 @@ class Game extends Sprite
 			key = 'y';
 		if (input == 90)
 			key = 'z';
-		
-		for (char in guessedLetters)
+		if (key.length != 0)
 		{
-			if (char == key)
+			
+			for (char in guessedLetters)
 			{
-				contains = true;
+				if (char == key)
+				{
+					contains = true;
+				}
+			}
+			if (!contains) 
+			{
+				guessedLetters.push(key);
+				maskedWord = guessingWord(hiddenWord, guessedLetters);
+				guessedLettersBoard.text = guessedLettersToWord(guessedLetters);
+				guessedLettersBoard.setTextFormat(ts);
+				wordBox.text = maskedWord;
+				wordBox.setTextFormat(ts);
+				trace(guessedLetters);
 			}
 		}
-		if (!contains) 
-		{
-			guessedLetters.push(key);
-			maskedWord = guessingWord(hiddenWord, guessedLetters);
-			wordBox.text = maskedWord;
-			wordBox.setTextFormat(ts);
-			trace(guessedLetters);
-		}
+		if (key.length==0)
+			restart();
 	}
+	
 	function guessingWord(word:Array<String>, guessed:Array<String>)
 	{
 		var contains:Bool;
@@ -145,9 +204,15 @@ class Game extends Sprite
 				contains = true;
 			}
 		}
-		if (!contains)
+		if (guessedLetter != null)
 		{
-			health -= 1;
+			if (!contains)
+			{
+				health -= 1;
+				hangmanBoard.removeChild(hangman);
+				hangman = new Bitmap(Assets.getBitmapData("img/Hangman_" + Std.string(health) + ".png"));
+				hangmanBoard.addChild(hangman);
+			}
 		}
 		for (char in word)
 		{
@@ -167,7 +232,7 @@ class Game extends Sprite
 		return output;
 	}
 	
-	function textBoxSetup(word:String)
+	function wordBoxSetup(word:String)
 	{
 		ts = new TextFormat();
         ts.font = "Ubuntu";
@@ -189,12 +254,22 @@ class Game extends Sprite
 	
 	function setUp()
 	{
-		var board = new Bitmap(Assets.getBitmapData("img/keyboard.png"));
+		/*var board = new Bitmap(Assets.getBitmapData("img/keyboard.png"));
 		var sprite = new Sprite();
 		sprite.addChild(board);
 		this.addChild(sprite);
+		sprite.x = 325;
+		sprite.y = 200;*/
 		//sprite.scaleX = 120;
 		//sprite.scaleY = 120;
+		hangman = new Bitmap(Assets.getBitmapData("img/Hangman_" + Std.string(health) + ".png"));
+		hangmanBoard = new Sprite();
+		hangmanBoard.addChild(hangman);
+		hangmanBoard.x = 100;
+		hangmanBoard.y = 100;
+		hangmanBoard.width = 200;
+		hangmanBoard.height = 300;
+		this.addChild(hangmanBoard);
 		
 	}
 	
