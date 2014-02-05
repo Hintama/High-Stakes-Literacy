@@ -22,7 +22,7 @@ class Game extends Sprite
 	var ts:TextFormat;
 	var guessedLettersBoard:TextField;
 	public var health:Int;
-	var key:String;
+	public var missingLetters:Int;
 	var input:Int;
 	var hiddenWord:Array<String>;
 	var guessedLetters:Array<String>;
@@ -34,11 +34,10 @@ class Game extends Sprite
 	{
 		super();
 		health = 6;
-		this.x = 0;
-		this.y = 0;
-		hiddenWord = new Array<String>();
+		hiddenWord = [];
 		guessedLetters = [];
 		word = randomWord();
+		missingLetters = word.length;
 		setUp();
 		for (x in 0...word.length)
 		{
@@ -57,6 +56,37 @@ class Game extends Sprite
 		Lib.current.stage.addEventListener(KeyboardEvent.KEY_DOWN, traceKeyboard);
 		
 	}
+	
+	function restart()
+	{
+		health = 6;
+		word = randomWord();
+		guessedLetters = [];
+		hiddenWord = [];
+		missingLetters = word.length;
+		for (x in 0...word.length)
+		{
+			hiddenWord[x] = word.charAt(x);
+		}
+		hangmanBoard.removeChild(hangman);
+		hangman = new Bitmap(Assets.getBitmapData("img/Hangman_" + Std.string(health) + ".png"));
+		hangmanBoard.addChild(hangman);
+		maskedWord=guessingWord(hiddenWord, guessedLetters);
+        wordBox.text = maskedWord;
+        wordBox.setTextFormat(ts);
+		guessedLettersBoard.text = guessedLettersToWord(guessedLetters);
+		guessedLettersBoard.setTextFormat(ts);
+	}
+	
+	function updateMissingLetters(word:String)
+	{
+		missingLetters = 0;
+		for (x in 0...word.length)
+		{
+			if (word.charAt(x) == "_") missingLetters += 1;
+		}
+	}
+	
 	function guessedLettersToWord(letters:Array<String>)
 	{
 		var outPut:String;
@@ -74,6 +104,8 @@ class Game extends Sprite
 	
 	function traceKeyboard(e : KeyboardEvent)
 	{
+		var key:String;
+		key = "";
 		var contains:Bool;
 		contains = false;
 		input = e.keyCode;
@@ -130,25 +162,31 @@ class Game extends Sprite
 			key = 'y';
 		if (input == 90)
 			key = 'z';
-		
-		for (char in guessedLetters)
+		if (key.length != 0)
 		{
-			if (char == key)
+			
+			for (char in guessedLetters)
 			{
-				contains = true;
+				if (char == key)
+				{
+					contains = true;
+				}
+			}
+			if (!contains) 
+			{
+				guessedLetters.push(key);
+				maskedWord = guessingWord(hiddenWord, guessedLetters);
+				guessedLettersBoard.text = guessedLettersToWord(guessedLetters);
+				guessedLettersBoard.setTextFormat(ts);
+				wordBox.text = maskedWord;
+				wordBox.setTextFormat(ts);
+				trace(guessedLetters);
 			}
 		}
-		if (!contains) 
-		{
-			guessedLetters.push(key);
-			maskedWord = guessingWord(hiddenWord, guessedLetters);
-			guessedLettersBoard.text = guessedLettersToWord(guessedLetters);
-			guessedLettersBoard.setTextFormat(ts);
-			wordBox.text = maskedWord;
-			wordBox.setTextFormat(ts);
-			trace(guessedLetters);
-		}
+		if (key.length==0)
+			restart();
 	}
+	
 	function guessingWord(word:Array<String>, guessed:Array<String>)
 	{
 		var contains:Bool;
@@ -171,6 +209,7 @@ class Game extends Sprite
 			if (!contains)
 			{
 				health -= 1;
+				hangmanBoard.removeChild(hangman);
 				hangman = new Bitmap(Assets.getBitmapData("img/Hangman_" + Std.string(health) + ".png"));
 				hangmanBoard.addChild(hangman);
 			}
