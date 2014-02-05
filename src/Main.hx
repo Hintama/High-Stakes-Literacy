@@ -42,7 +42,7 @@ class Main extends Sprite
 		game = new Game();
 		this.addChild(menu);
 		this.addChild(game);
-		game.y=500;
+		//game.y=500;
 		addEventListener(Event.ADDED_TO_STAGE, added);
 		Lib.current.stage.addEventListener(Event.ENTER_FRAME, atRefresh);
 	}

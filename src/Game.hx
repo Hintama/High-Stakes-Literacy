@@ -20,6 +20,7 @@ class Game extends Sprite
 	var word:String;
 	var wordBox:TextField;
 	var ts:TextFormat;
+	var guessedLettersBoard:TextField;
 	public var health:Int;
 	var key:String;
 	var input:Int;
@@ -42,12 +43,28 @@ class Game extends Sprite
 			hiddenWord[x] = word.charAt(x);
 		}
 		maskedWord=guessingWord(hiddenWord, guessedLetters);
-		textBoxSetup(maskedWord);
+		wordBoxSetup(maskedWord);
+		guessedLettersBoard = new TextField();
+		guessedLettersBoard.text = guessedLettersToWord(guessedLetters);
+		guessedLettersBoard.setTextFormat(ts);
+		this.addChild(guessedLettersBoard);
+		guessedLettersBoard.y = 400;
+		guessedLettersBoard.x = 200;
+		guessedLettersBoard.width = 400;
 		//Lib.current.stage.addEventListener(KeyboardEvent.KEY_DOWN, traceKey);
 		Lib.current.stage.addEventListener(KeyboardEvent.KEY_DOWN, traceKeyboard);
 		
 	}
-	
+	function guessedLettersToWord(letters:Array<String>)
+	{
+		var outPut:String;
+		outPut = "";
+		for (x in letters)
+		{
+			outPut += x;
+		}
+		return outPut;
+	}
 	function traceKey(e : KeyboardEvent)
 	{
 		trace(e.keyCode);
@@ -123,6 +140,8 @@ class Game extends Sprite
 		{
 			guessedLetters.push(key);
 			maskedWord = guessingWord(hiddenWord, guessedLetters);
+			guessedLettersBoard.text = guessedLettersToWord(guessedLetters);
+			guessedLettersBoard.setTextFormat(ts);
 			wordBox.text = maskedWord;
 			wordBox.setTextFormat(ts);
 			trace(guessedLetters);
@@ -167,7 +186,7 @@ class Game extends Sprite
 		return output;
 	}
 	
-	function textBoxSetup(word:String)
+	function wordBoxSetup(word:String)
 	{
 		ts = new TextFormat();
         ts.font = "Ubuntu";
