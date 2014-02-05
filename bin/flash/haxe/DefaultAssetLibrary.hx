@@ -36,12 +36,40 @@ class DefaultAssetLibrary extends AssetLibrary {
 		
 		#if flash
 		
+		className.set ("img/Hangman_0.png", __ASSET__img_hangman_0_png);
+		type.set ("img/Hangman_0.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("img/Hangman_1.png", __ASSET__img_hangman_1_png);
+		type.set ("img/Hangman_1.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("img/Hangman_2.png", __ASSET__img_hangman_2_png);
+		type.set ("img/Hangman_2.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("img/Hangman_3.png", __ASSET__img_hangman_3_png);
+		type.set ("img/Hangman_3.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("img/Hangman_4.png", __ASSET__img_hangman_4_png);
+		type.set ("img/Hangman_4.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("img/Hangman_5.png", __ASSET__img_hangman_5_png);
+		type.set ("img/Hangman_5.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("img/Hangman_6.png", __ASSET__img_hangman_6_png);
+		type.set ("img/Hangman_6.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/keyboard.png", __ASSET__img_keyboard_png);
 		type.set ("img/keyboard.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		
 		
 		#elseif html5
 		
+		path.set ("img/Hangman_0.png", "img/Hangman_0.png");
+		type.set ("img/Hangman_0.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("img/Hangman_1.png", "img/Hangman_1.png");
+		type.set ("img/Hangman_1.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("img/Hangman_2.png", "img/Hangman_2.png");
+		type.set ("img/Hangman_2.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("img/Hangman_3.png", "img/Hangman_3.png");
+		type.set ("img/Hangman_3.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("img/Hangman_4.png", "img/Hangman_4.png");
+		type.set ("img/Hangman_4.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("img/Hangman_5.png", "img/Hangman_5.png");
+		type.set ("img/Hangman_5.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("img/Hangman_6.png", "img/Hangman_6.png");
+		type.set ("img/Hangman_6.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/keyboard.png", "img/keyboard.png");
 		type.set ("img/keyboard.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		
@@ -487,10 +515,24 @@ class DefaultAssetLibrary extends AssetLibrary {
 #if pixi
 #elseif flash
 
+class __ASSET__img_hangman_0_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__img_hangman_1_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__img_hangman_2_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__img_hangman_3_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__img_hangman_4_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__img_hangman_5_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__img_hangman_6_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_keyboard_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 
 
 #elseif html5
+
+
+
+
+
+
+
 
 
 
