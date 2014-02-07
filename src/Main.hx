@@ -19,6 +19,8 @@ class Main extends Sprite
 	var inited:Bool;
 	var game:Game;
 	var menu:Menu;
+	public var zombies:List<Enemy>;
+	
 	/* ENTRY POINT */
 	
 	function resize(e) 
@@ -42,9 +44,18 @@ class Main extends Sprite
 		menu = new Menu();
 		game = new Game();
 		this.addChild(game);
-		this.addChild(menu);
 		addEventListener(Event.ADDED_TO_STAGE, added);
 		Lib.current.stage.addEventListener(Event.ENTER_FRAME, atRefresh);
+	}
+	
+	public function horde()
+	{
+		for ( x in 0 ... 20)
+		{
+			var zombie = new Enemy();
+			this.addChild(zombie);
+			zombies.add(zombie);
+		}
 	}
 
 	function atRefresh(e)
