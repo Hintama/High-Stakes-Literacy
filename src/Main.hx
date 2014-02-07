@@ -19,7 +19,7 @@ class Main extends Sprite
 	var inited:Bool;
 	var game:Game;
 	var menu:Menu;
-	public var zombies:List<Enemy>;
+	public var zombies:Array<Enemy>;
 	
 	/* ENTRY POINT */
 	
