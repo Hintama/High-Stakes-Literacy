@@ -48,11 +48,11 @@ class Main extends Sprite
 		Lib.current.stage.addEventListener(Event.ENTER_FRAME, atRefresh);
 	}
 	
-	public funtion horde()
+	public function horde()
 	{
 		for ( x in 0 ... 20)
 		{
-			var zombie = new Enemy(800, 300);
+			var zombie = new Enemy();
 			this.addChild(zombie);
 			zombies.add(zombie);
 		}

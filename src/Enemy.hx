@@ -10,7 +10,7 @@ import openfl.Assets;
  * ...
  * @author Trey Clark
  */
-class  
+class Enemy extends Sprite
 {
 
 	var v:Float;
@@ -19,13 +19,11 @@ class
 	{
 		super();
 		var img = new Bitmap(Assets.getBitmapData("img/zombie.png"));
-		var sprite = new Sprite;
+		var sprite = new Sprite();
 		sprite.addChild(img);
 		this.addChild(sprite);
 		sprite.width = 50;
 		sprite.height = 75;
-		this.x = x;
-		this.y = y;
 		this.v = -0.5;
 	}
 	
