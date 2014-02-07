@@ -64,6 +64,12 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("img/Playbutton.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/restart.png", __ASSET__img_restart_png);
 		type.set ("img/restart.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("txt/load1.txt", __ASSET__txt_load1_txt);
+		type.set ("txt/load1.txt", Reflect.field (AssetType, "text".toUpperCase ()));
+		className.set ("txt/load2.txt", __ASSET__txt_load2_txt);
+		type.set ("txt/load2.txt", Reflect.field (AssetType, "text".toUpperCase ()));
+		className.set ("txt/load3.txt", __ASSET__txt_load3_txt);
+		type.set ("txt/load3.txt", Reflect.field (AssetType, "text".toUpperCase ()));
 		
 		
 		#elseif html5
@@ -96,6 +102,12 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("img/Playbutton.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/restart.png", "img/restart.png");
 		type.set ("img/restart.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("txt/load1.txt", "txt/load1.txt");
+		type.set ("txt/load1.txt", Reflect.field (AssetType, "text".toUpperCase ()));
+		path.set ("txt/load2.txt", "txt/load2.txt");
+		type.set ("txt/load2.txt", Reflect.field (AssetType, "text".toUpperCase ()));
+		path.set ("txt/load3.txt", "txt/load3.txt");
+		type.set ("txt/load3.txt", Reflect.field (AssetType, "text".toUpperCase ()));
 		
 		
 		#else
@@ -553,9 +565,15 @@ class __ASSET__img_l2button_png extends flash.display.BitmapData { public functi
 class __ASSET__img_l3button_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_playbutton_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_restart_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__txt_load1_txt extends flash.utils.ByteArray { }
+class __ASSET__txt_load2_txt extends flash.utils.ByteArray { }
+class __ASSET__txt_load3_txt extends flash.utils.ByteArray { }
 
 
 #elseif html5
+
+
+
 
 
 
