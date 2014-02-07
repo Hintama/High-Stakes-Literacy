@@ -8,6 +8,7 @@ import flash.ui.Keyboard;
 import flash.display.Bitmap;
 import flash.display.BitmapData;
 import openfl.Assets;
+import motion.Actuate;
 
 /**
  * ... */
@@ -40,7 +41,6 @@ class Main extends Sprite
 		super();
 		menu = new Menu();
 		game = new Game();
-		this.addChild(menu);
 		this.addChild(game);
 		this.addChild(menu);
 		addEventListener(Event.ADDED_TO_STAGE, added);
@@ -49,33 +49,18 @@ class Main extends Sprite
 
 	function atRefresh(e)
 	{
+		if (menu.menuOn == false)
+		{
+			game.restart();
+			menu.menuOn = true;
+		}
 		if (game.health == 0)
 		{
-			menu.menuOn = true;
-			menu.gameOn = false;
-			game.restart();
+			Actuate.tween(menu, 4, { x:0, y:0 } ).onComplete(game.restart);
 		}
 		if (game.missingLetters == 0)
 		{
-			menu.menuOn = true;
-			menu.gameOn = false;
-			game.restart();
-		}
-		if (menu.menuOn)
-		{
-			menu.y = 0;
-		}
-		if (menu.gameOn)
-		{
-			game.y = 0;
-		}
-		if (!menu.menuOn)
-		{
-			menu.y = 500;
-		}
-		if (!menu.gameOn)
-		{
-			game.y = 500;
+			Actuate.tween(menu, 4, { x:0, y:0 } ).onComplete(game.restart);
 		}
 	}
 	function added(e) 

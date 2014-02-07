@@ -182,8 +182,6 @@ class Game extends Sprite
 				wordBox.setTextFormat(ts);
 			}
 		}
-		if (key.length==0)
-			restart();
 	}
 	
 	function guessingWord(word:Array<String>, guessed:Array<String>)
@@ -207,10 +205,13 @@ class Game extends Sprite
 		{
 			if (!contains)
 			{
-				health -= 1;
-				hangmanBoard.removeChild(hangman);
-				hangman = new Bitmap(Assets.getBitmapData("img/Hangman_" + Std.string(health) + ".png"));
-				hangmanBoard.addChild(hangman);
+				if (health > 0)
+				{
+					health -= 1;
+					hangmanBoard.removeChild(hangman);
+					hangman = new Bitmap(Assets.getBitmapData("img/Hangman_" + Std.string(health) + ".png"));
+					hangmanBoard.addChild(hangman);
+				}
 			}
 		}
 		for (char in word)

@@ -10,6 +10,7 @@ import flash.display.Bitmap;
 import flash.text.TextField;
 import flash.text.TextFormat;
 import openfl.Assets;
+import motion.Actuate;
 
 
 /**
@@ -19,14 +20,12 @@ import openfl.Assets;
 class Menu extends Sprite
 {
 	public var menuOn:Bool;
-	public var gameOn:Bool;
 	
 	public function new() 
 	{
 		super();
 		
 		menuOn = true;
-		gameOn = false;
 		
 		this.x = 0;
 		this.y = 0;
@@ -67,12 +66,13 @@ class Menu extends Sprite
 	public function playGame_mouse(e)
 	{
 		menuOn = false;
-		gameOn = true; 
+		Actuate.tween(this, 4, { x:0, y:600 } );
 	}
 	public function playL1_mouse(e)
 	{
 		menuOn = false;
-		gameOn = true; 
+		Actuate.tween(this, 4, { x:0, y:600 } );
+		
 	}
 	public function playL2_mouse(e)
 	{
