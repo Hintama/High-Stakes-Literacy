@@ -29,6 +29,7 @@ class Game extends Sprite
 	var maskedWord:String;
 	var hangman:Bitmap;
 	var hangmanBoard:Sprite;
+	public var zombies:List<Enemy>;
 
 	public function new() 
 	{
@@ -54,7 +55,6 @@ class Game extends Sprite
 		guessedLettersBoard.width = 400;
 		//Lib.current.stage.addEventListener(KeyboardEvent.KEY_DOWN, traceKey);
 		Lib.current.stage.addEventListener(KeyboardEvent.KEY_DOWN, traceKeyboard);
-		
 	}
 	
 	public function restart()
@@ -263,6 +263,7 @@ class Game extends Sprite
 		sprite.y = 200;*/
 		//sprite.scaleX = 120;
 		//sprite.scaleY = 120;
+		zombies = new List<Enemy>();
 		hangman = new Bitmap(Assets.getBitmapData("img/Hangman_" + Std.string(health) + ".png"));
 		hangmanBoard = new Sprite();
 		hangmanBoard.addChild(hangman);
@@ -271,7 +272,23 @@ class Game extends Sprite
 		hangmanBoard.width = 200;
 		hangmanBoard.height = 300;
 		this.addChild(hangmanBoard);
-		
+		this.horde();
 	}
+	
+	public function horde()
+	{
+		for ( x in 0 ... 20)
+		{
+			var zombie = new Enemy();
+			zombie.x = 925;
+			zombie.y = 240;
+			zombie.height = 200;
+			zombie.width = 150;
+			this.addChild(zombie);
+			zombies.add(zombie);
+			zombie.move();
+		}
+	}
+	
 	
 }
