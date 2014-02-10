@@ -19,6 +19,8 @@ class Main extends Sprite
 	var inited:Bool;
 	var game:Game;
 	var menu:Menu;
+	var frame_count:Int;
+	public var zombies:List<Enemy>;
 	
 	/* ENTRY POINT */
 	
@@ -40,8 +42,10 @@ class Main extends Sprite
 	public function new() 
 	{
 		super();
+		frame_count = 0;
 		menu = new Menu();
 		game = new Game();
+		zombies = new List<Enemy>();
 		this.addChild(game);
 		this.addChild(menu);
 		addEventListener(Event.ADDED_TO_STAGE, added);
@@ -51,6 +55,11 @@ class Main extends Sprite
 
 	function atRefresh(e)
 	{
+		frame_count += 1;
+		if (frame_count % 60==0)
+		{
+			game.act();
+		}
 		if (menu.menuOn == false)
 		{
 			game.restart();

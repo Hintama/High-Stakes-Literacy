@@ -57,6 +57,13 @@ class Game extends Sprite
 		Lib.current.stage.addEventListener(KeyboardEvent.KEY_DOWN, traceKeyboard);
 	}
 	
+	public function act()
+	{
+		/*
+		 * things happen here every second (can be changed in main)
+		 * */
+	}
+	
 	public function restart()
 	{
 		health = 6;
@@ -207,6 +214,9 @@ class Game extends Sprite
 			{
 				if (health > 0)
 				{
+					/*
+					 * here is where things happen if you guess a letter wrong
+					 * */
 					health -= 1;
 					hangmanBoard.removeChild(hangman);
 					hangman = new Bitmap(Assets.getBitmapData("img/Hangman_" + Std.string(health) + ".png"));
@@ -250,7 +260,10 @@ class Game extends Sprite
 	
 	function randomWord()
 	{
-		return "squirrel";
+		var line:String;
+		line = Assets.getText("txt/load1.txt");
+		var words:Array<String> = line.split(",");
+		return words[Std.random(25)];
 	}
 	
 	function setUp()
