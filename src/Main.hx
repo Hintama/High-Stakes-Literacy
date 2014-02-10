@@ -58,7 +58,7 @@ class Main extends Sprite
 		{
 			var zombie = new Enemy();
 			this.addChild(zombie);
-			zombies.add(zombie);
+			//zombies.add(zombie);
 		}
 	}
 
