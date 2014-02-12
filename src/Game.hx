@@ -295,13 +295,9 @@ class Game extends Sprite
 	
 	public function horde()
 	{
-		for ( x in 0 ... 20)
+		for ( x in 0 ... 1)
 		{
 			var zombie = new Enemy();
-			zombie.x = 925;
-			zombie.y = 240;
-			zombie.height = 200;
-			zombie.width = 150;
 			this.addChild(zombie);
 			zombies.add(zombie);
 			zombie.move();
