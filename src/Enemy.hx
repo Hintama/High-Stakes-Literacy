@@ -19,23 +19,20 @@ class Enemy extends Sprite
 	public function new() 
 	{
 		super();
-		var img = new Bitmap(Assets.getBitmapData("img/zombie.png"));
+		var zom = new Bitmap(Assets.getBitmapData("img/zombie.png"));
+		var pitchfork = new Bitmap(Assets.getBitmapData("img/pitchfork.png"));
 		var sprite = new Sprite();
-		sprite.addChild(img);
+		sprite.addChild(pitchfork);
+		sprite.addChild(zom);
 		this.addChild(sprite);
-		sprite.width = 50;
-		sprite.height = 75;
-		this.v = -0.5;
+		this.v = -2.0;
 	}
-	
-	
-	
 	
 	
 	public function move()
 	{
-		v = v + (v * 0.2);
-		this.x = v + x;
+		v = v + (-x * 0.2);
+		this.x = x + v;
 	}
 	
 }
