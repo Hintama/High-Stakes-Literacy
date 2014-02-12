@@ -31,6 +31,7 @@ class Game extends Sprite
 	var hangmanBoard:Sprite;
 	var score:Score;
 	public var zombies:List<Enemy>;
+	public var bitchimhere:Bool;
 
 	public function new() 
 	{
@@ -66,6 +67,10 @@ class Game extends Sprite
 		for (zombie in zombies)
 		{
 			zombie.move();
+			if (zombie.x < 175)
+			{
+				zomwin();
+			}
 		}
 	}
 	
@@ -281,6 +286,7 @@ class Game extends Sprite
 		sprite.y = 200;*/
 		//sprite.scaleX = 120;
 		//sprite.scaleY = 120;
+		bitchimhere = false;
 		zombies = new List<Enemy>();
 		hangman = new Bitmap(Assets.getBitmapData("img/Hangman_" + Std.string(health) + ".png"));
 		hangmanBoard = new Sprite();
@@ -303,6 +309,12 @@ class Game extends Sprite
 			zombie.move();
 			
 		}
+	}
+	
+	function zomwin()
+	{
+		health = 0;
+		bitchimhere = true;
 	}
 	
 	

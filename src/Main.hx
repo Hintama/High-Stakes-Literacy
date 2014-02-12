@@ -67,6 +67,8 @@ class Main extends Sprite
 		}
 		if (game.health == 0)
 		{
+			if ( game.bitchimhere == true)
+				trace ("SUPRIZEMOTHAFUCKA!!!!!!!!!");
 			Actuate.tween(menu, 4, { x:0, y:0 } ).onComplete(game.restart);
 		}
 		if (game.missingLetters == 0)
