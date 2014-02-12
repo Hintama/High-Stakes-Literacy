@@ -2,16 +2,11 @@
 -lib openfl
 -lib actuate
 -cp src
-<<<<<<< HEAD
--D tools=1.2.8
--D fdb
-=======
 -D tools=1.2.6
->>>>>>> 67092c60fc6b58e3901526bd78908dccbebfe1df
 -D web
 -swf-version 11.2
 -swf bin/flash/bin/HSL.swf
--swf-header 800:480:60:00AAAA
+-swf-header 800:480:60:800000
 -cp bin/flash/haxe
 #--remap nme:flash
 --no-inline
