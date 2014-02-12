@@ -78,13 +78,10 @@ class Menu extends Sprite
 	public function playGame_mouse(e)
 	{
 		menuOn = false;
-		Actuate.tween(this, 4, { x:0, y:600 } );
 	}
 	public function playL1_mouse(e)
 	{
 		menuOn = false;
-		Actuate.tween(this, 4, { x:0, y:600 } );
-		
 	}
 	public function playL2_mouse(e)
 	{

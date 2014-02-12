@@ -3,10 +3,21 @@
 -lib actuate
 -cp src
 -D tools=1.2.6
+<<<<<<< HEAD
 -D fdb
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+-D fdb
+=======
+>>>>>>> 67092c60fc6b58e3901526bd78908dccbebfe1df
+>>>>>>> f2e31bbd53bdafa953601c672051cbd35b86891e
+>>>>>>> 32b8f1e9bba0a1381442141bd945b1914ef7aaee
+>>>>>>> 22726d4d73462226dd9bff0a1ebe971b1194ef9a
 -D web
 -swf-version 11.2
 -swf bin/flash/bin/HSL.swf
--swf-header 800:480:60:00AAAA
+-swf-header 800:480:60:800000
 -cp bin/flash/haxe
 #--remap nme:flash

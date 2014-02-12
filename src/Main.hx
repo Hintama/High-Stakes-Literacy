@@ -62,18 +62,19 @@ class Main extends Sprite
 		}
 		if (menu.menuOn == false)
 		{
+			Actuate.tween(menu, 3, { x:0, y:600 } );
 			game.restart();
 			menu.menuOn = true;
 		}
 		if (game.health == 0)
 		{
-			if ( game.bitchimhere == true)
-				trace ("SUPRIZEMOTHAFUCKA!!!!!!!!!");
-			Actuate.tween(menu, 4, { x:0, y:0 } ).onComplete(game.restart);
+			Actuate.tween(menu, 4, { x:0, y:0 } );
+			game.restart();
 		}
 		if (game.missingLetters == 0)
 		{
-			Actuate.tween(menu, 4, { x:0, y:0 } ).onComplete(game.restart);
+			Actuate.tween(menu, 4, { x:0, y:0 } );
+			game.restart();
 		}
 	}
 	function added(e) 
