@@ -40,7 +40,7 @@ class Game extends Sprite
 		guessedLetters = [];
 		word = randomWord();
 		missingLetters = word.length;
-		score = new Score(0,);
+		score = new Score();
 		score.x = 600;
 		score.y = 400;
 		setUp();
@@ -305,6 +305,7 @@ class Game extends Sprite
 			this.addChild(zombie);
 			zombies.add(zombie);
 			zombie.move();
+			
 		}
 	}
 	
