@@ -21,7 +21,7 @@
   </classpaths>
   <!-- Build options -->
   <build>
-    <option directives="tools=1.2.6&#xA;display&#xA;web" />
+    <option directives="tools=1.2.8&#xA;display&#xA;web" />
     <option flashStrict="False" />
     <option noInlineOnDebug="False" />
     <option mainClass="ApplicationMain" />

@@ -10,7 +10,6 @@ import flash.display.Bitmap;
 import flash.text.TextField;
 import flash.text.TextFormat;
 import openfl.Assets;
-import motion.Actuate;
 
 
 /**
@@ -20,16 +19,18 @@ import motion.Actuate;
 class Menu extends Sprite
 {
 	public var menuOn:Bool;
+	public var gameOn:Bool;
 	
 	public function new() 
 	{
 		super();
 		
 		menuOn = true;
+		gameOn = false;
 		
 		this.x = 0;
 		this.y = 0;
-		var logo = new Bitmap(Assets.getBitmapData("img/logo2.png"));
+		var logo = new Bitmap(Assets.getBitmapData("img/YouLose.png"));
 		var background = new Bitmap(Assets.getBitmapData("img/background.png"));
 		var playButton = new Bitmap(Assets.getBitmapData("img/play2.png"));
 		var L1button = new Bitmap(Assets.getBitmapData("img/easy.png"));
@@ -44,9 +45,9 @@ class Menu extends Sprite
 		var L3b = new Sprite();
 		
 		title.addChild(logo);
-		menu.addChild(background);
 		play.addChild(playButton);
 		L1b.addChild(L1button);
+		menu.addChild(background);
 		L2b.addChild(L2button);
 		L3b.addChild(L3button);
 		
@@ -63,7 +64,7 @@ class Menu extends Sprite
 		this.addChild(L2b);
 		this.addChild(L3b);
 		
-		title.x = 100;
+		title.x = 241;
 		title.y = 50; 
 		play.x = 358.25;
 		play.y = 160; 
@@ -78,13 +79,12 @@ class Menu extends Sprite
 	public function playGame_mouse(e)
 	{
 		menuOn = false;
-		Actuate.tween(this, 4, { x:0, y:600 } );
+		gameOn = true; 
 	}
 	public function playL1_mouse(e)
 	{
 		menuOn = false;
-		Actuate.tween(this, 4, { x:0, y:600 } );
-		
+		gameOn = true; 
 	}
 	public function playL2_mouse(e)
 	{
