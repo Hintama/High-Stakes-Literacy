@@ -26,26 +26,27 @@ class Enemy extends Sprite
 		var pitchfork = new Bitmap(Assets.getBitmapData("img/pitchfork.png"));
 		var sprite = new Sprite();
 		sprite.addChild(pitchfork);
+		pitchfork.width = pitchfork.width - 35;
+		pitchfork.x = this.x - 41;
 		sprite.addChild(zom);
 		this.addChild(sprite);
-<<<<<<< HEAD
-		this.v = -2.0;
 		sprite.addEventListener(MouseEvent.MOUSE_DOWN, onClick);
-=======
 		this.v = -0.5;
->>>>>>> 3f4e2c3af786618d4069c4c5222352f39dd8ca61
+		this.x = 900;
+		this.y = 220;
+		this.height = 160;
+		this.width = 115;
 	}
 	
 	
 	public function move()
 	{
-		v = x + (-x * 1.005);
-		this.x = x + v;
+		Actuate.tween(this, 1, { x:(this.x - 50), y:this.y } );
 	}
 	
 	function onClick(e:MouseEvent)
 	{
-		//Actuate.tween(this, 0.5, { x:(this.x - 10), y:this.y } );
+		Actuate.tween(this, 0.5, { x:(this.x + 10), y:this.y } );
 	}
 	
 }
