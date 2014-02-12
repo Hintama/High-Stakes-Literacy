@@ -28,14 +28,18 @@ class Enemy extends Sprite
 		sprite.addChild(pitchfork);
 		sprite.addChild(zom);
 		this.addChild(sprite);
+<<<<<<< HEAD
 		this.v = -2.0;
 		sprite.addEventListener(MouseEvent.MOUSE_DOWN, onClick);
+=======
+		this.v = -0.5;
+>>>>>>> 3f4e2c3af786618d4069c4c5222352f39dd8ca61
 	}
 	
 	
 	public function move()
 	{
-		v = v + (-x * 0.2);
+		v = x + (-x * 1.005);
 		this.x = x + v;
 	}
 	
