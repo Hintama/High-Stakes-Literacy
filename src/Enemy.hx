@@ -37,11 +37,14 @@ class Enemy extends Sprite
 		this.height = 160;
 		this.width = 115;
 	}
-	
+
 	
 	public function move()
 	{
-		Actuate.tween(this, 1, { x:(this.x - 50), y:this.y } );
+		if (this.x > 175)
+		{
+			Actuate.tween(this, 1, { x:(this.x - 50), y:this.y } );
+		}
 	}
 	
 	function onClick(e:MouseEvent)

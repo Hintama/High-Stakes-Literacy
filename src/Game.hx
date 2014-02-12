@@ -31,6 +31,7 @@ class Game extends Sprite
 	var hangmanBoard:Sprite;
 	var score:Score;
 	public var zombies:List<Enemy>;
+	public var bitchimhere:Bool;
 
 	public function new() 
 	{
@@ -51,12 +52,12 @@ class Game extends Sprite
 		maskedWord=guessingWord(hiddenWord, guessedLetters);
 		wordBoxSetup(maskedWord);
 		guessedLettersBoard = new TextField();
-		guessedLettersBoard.text = guessedLettersToWord(guessedLetters);
+		guessedLettersBoard.text = "Letters Guessed: "+guessedLettersToWord(guessedLetters);
 		guessedLettersBoard.setTextFormat(ts);
 		this.addChild(guessedLettersBoard);
-		guessedLettersBoard.y = 400;
-		guessedLettersBoard.x = 200;
-		guessedLettersBoard.width = 400;
+		guessedLettersBoard.y = 430;
+		guessedLettersBoard.x = 50;
+		guessedLettersBoard.width = 800;
 		//Lib.current.stage.addEventListener(KeyboardEvent.KEY_DOWN, traceKey);
 		Lib.current.stage.addEventListener(KeyboardEvent.KEY_DOWN, traceKeyboard);
 	}
@@ -66,6 +67,10 @@ class Game extends Sprite
 		for (zombie in zombies)
 		{
 			zombie.move();
+			if (zombie.x < 175)
+			{
+				zomwin();
+			}
 		}
 	}
 	
@@ -86,7 +91,7 @@ class Game extends Sprite
 		maskedWord=guessingWord(hiddenWord, guessedLetters);
         wordBox.text = maskedWord;
         wordBox.setTextFormat(ts);
-		guessedLettersBoard.text = guessedLettersToWord(guessedLetters);
+		guessedLettersBoard.text = "Letters Guessed: "+guessedLettersToWord(guessedLetters);
 		guessedLettersBoard.setTextFormat(ts);
 	}
 	
@@ -188,7 +193,7 @@ class Game extends Sprite
 			{
 				guessedLetters.push(key);
 				maskedWord = guessingWord(hiddenWord, guessedLetters);
-				guessedLettersBoard.text = guessedLettersToWord(guessedLetters);
+				guessedLettersBoard.text = "Guessed Letters: "+guessedLettersToWord(guessedLetters);
 				guessedLettersBoard.setTextFormat(ts);
 				wordBox.text = maskedWord;
 				wordBox.setTextFormat(ts);
@@ -251,9 +256,9 @@ class Game extends Sprite
 	function wordBoxSetup(word:String)
 	{
 		ts = new TextFormat();
-        ts.font = "Ubuntu";
-        ts.size = 45;               
-        ts.color=0xFFFFFF;
+        ts.font = "Chiller";
+        ts.size = 35;               
+        ts.color=0xFFCCCC;
         wordBox = new TextField();
         wordBox.text = word;
         wordBox.setTextFormat(ts);
@@ -281,6 +286,7 @@ class Game extends Sprite
 		sprite.y = 200;*/
 		//sprite.scaleX = 120;
 		//sprite.scaleY = 120;
+		bitchimhere = false;
 		zombies = new List<Enemy>();
 		hangman = new Bitmap(Assets.getBitmapData("img/Hangman_" + Std.string(health) + ".png"));
 		hangmanBoard = new Sprite();
@@ -303,6 +309,12 @@ class Game extends Sprite
 			zombie.move();
 			
 		}
+	}
+	
+	function zomwin()
+	{
+		health = 0;
+		bitchimhere = true;
 	}
 	
 	
