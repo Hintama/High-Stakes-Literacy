@@ -64,7 +64,7 @@ class Menu extends Sprite
 		this.addChild(L2b);
 		this.addChild(L3b);
 		
-		title.x = 245;
+		title.x = 100;
 		title.y = 50; 
 		play.x = 358.25;
 		play.y = 160; 
