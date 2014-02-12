@@ -59,9 +59,10 @@ class Game extends Sprite
 	
 	public function act()
 	{
-		/*
-		 * things happen here every second (can be changed in main)
-		 * */
+		for (zombie in zombies)
+		{
+			zombie.move();
+		}
 	}
 	
 	public function restart()
