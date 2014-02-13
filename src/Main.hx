@@ -66,9 +66,10 @@ class Main extends Sprite
 	function atRefresh(e)
 	{
 		frame_count += 1;
-		if (frame_count % 60==0)
+		if (frame_count % 6==0)
 		{
-			if (menu.menuOn = true)
+			//if (menu.menuOn = true)
+			if(game.health > 0) 
 			game.act();
 		}
 		if (menu.menuOn == false)

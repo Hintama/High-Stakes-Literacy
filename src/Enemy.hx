@@ -9,7 +9,6 @@ import flash.events.Event;
 import openfl.Assets;
 import motion.Actuate;
 
-
 /**
  * ...
  * @author Trey Clark
@@ -48,13 +47,13 @@ class Enemy extends Sprite
 	{
 		if (this.x > 175)
 		{
-			Actuate.tween(this, 1, { x:(this.x - 40), y:this.y } );
+			Actuate.tween(this, 2, { x:(this.x - 15), y:this.y } );
 		}
 	}
 	
 	function onClick(e:MouseEvent)
 	{
-		Actuate.tween(this, 0.5, { x:(this.x + 10), y:this.y } );
+		Actuate.tween(this, .4, { x:(this.x + 4), y:this.y } );
 	}
 	
 }
