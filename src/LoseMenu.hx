@@ -18,20 +18,19 @@ import openfl.Assets;
  */
 class LoseMenu extends Sprite
 {
-	public var menuOn:Bool;
 	public var loseMenuOn:Bool;
-	public var gameOn:Bool;
+	public var menuOn:Bool;
 	
 	public function new() 
 	{
 		super();
 		
+		menuOn = false;
 		loseMenuOn = false;
-		gameOn = false;
 		
 		
 		this.x = 0;
-		this.y = 0;
+		this.y = 600;
 		var logo = new Bitmap(Assets.getBitmapData("img/YouLose.png"));
 		var background = new Bitmap(Assets.getBitmapData("img/background.png"));
 		var playButton = new Bitmap(Assets.getBitmapData("img/play2.png"));
@@ -66,14 +65,10 @@ class LoseMenu extends Sprite
 	}	
 	public function playGame_mouse(e)
 	{
-		menuOn = false;
-		loseMenuOn = false;
-		gameOn = true; 
+		loseMenuOn = true;
 	}
 	public function BackToMenu(e)
 	{
-		gameOn = false;
-		loseMenuOn = false;
 	    menuOn = true; 
 		
 	}
