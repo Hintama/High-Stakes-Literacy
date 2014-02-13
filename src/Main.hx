@@ -51,8 +51,8 @@ class Main extends Sprite
 		game = new Game();
 		zombies = new List<Enemy>();
 		this.addChild(game);
-		this.addChild(winMenu);
-		this.addChild(loseMenu);
+		//this.addChild(winMenu);
+		//this.addChild(loseMenu);
 		this.addChild(menu);
 		//this.addChild(WinMenu);
 		//this.
@@ -75,29 +75,47 @@ class Main extends Sprite
 			menu.menuOn = true;
 			
 		}
-		if (winMenu.winMenuOn == false)
+		if (menu.lvl1)
 		{
-			Actuate.tween(winMenu, 3, { x:0, y:600 } );
+			game.lvl = 1;
 			game.restart();
-			winMenu.menuOn = true;
-			
+			menu.lvl1 = false;
 		}
-		if (loseMenu.loseMenuOn == false)
+		if (menu.lvl2)
 		{
-			Actuate.tween(loseMenu, 3, { x:0, y:600 } );
+			game.lvl = 2;
 			game.restart();
-			winMenu.menuOn = true;
-			
+			menu.lvl2 = false;
 		}
+		if (menu.lvl3)
+		{
+			game.lvl = 3;
+			game.restart();
+			menu.lvl3 = false;
+		}
+		//if (winMenu.winMenuOn == false)
+		//{
+			//Actuate.tween(winMenu, 3, { x:0, y:600 } );
+			//game.restart();
+			//winMenu.menuOn = true;
+			//
+		//}
+		//if (loseMenu.loseMenuOn == false)
+		//{
+			//Actuate.tween(loseMenu, 3, { x:0, y:600 } );
+			//game.restart();
+			//winMenu.menuOn = true;
+			//
+		//}
 		
 		if (game.health == 0)
 		{
-			Actuate.tween(loseMenu, 4, { x:0, y:0 } );
+			Actuate.tween(menu, 4, { x:0, y:0 } );
 			game.restart();
 		}
 		if (game.missingLetters == 0)
 		{
-			Actuate.tween(winMenu, 4, { x:0, y:0 } );
+			Actuate.tween(menu, 4, { x:0, y:0 } );
 			game.restart();
 		}
 	}

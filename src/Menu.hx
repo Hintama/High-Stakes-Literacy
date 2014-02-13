@@ -20,12 +20,18 @@ import motion.Actuate;
 class Menu extends Sprite
 {
 	public var menuOn:Bool;
+	public var lvl1:Bool;
+	public var lvl2:Bool;
+	public var lvl3:Bool;
 	
 	public function new() 
 	{
 		super();
 		
 		menuOn = true;
+		lvl1 = false;
+		lvl2 = false;
+		lvl3 = false;
 		
 		this.x = 0;
 		this.y = 0;
@@ -82,15 +88,15 @@ class Menu extends Sprite
 	public function playL1_mouse(e)
 	{
 		menuOn = false;
+		lvl1 = true;
 	}
 	public function playL2_mouse(e)
 	{
-	
+		lvl2 = true;
 	}
 	public function playL3_mouse(e)
 	{
-	 
-		 
+		lvl3 = true;
 	}
 			
 		
