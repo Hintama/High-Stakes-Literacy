@@ -64,11 +64,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("img/L2button.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/L3button.png", __ASSET__img_l3button_png);
 		type.set ("img/L3button.png", Reflect.field (AssetType, "image".toUpperCase ()));
-<<<<<<< HEAD
 		className.set ("img/LevelSelect.png", __ASSET__img_levelselect_png);
 		type.set ("img/LevelSelect.png", Reflect.field (AssetType, "image".toUpperCase ()));
-=======
->>>>>>> acc39431a4fcbe8a7eb88e68e3e618f19805d992
 		className.set ("img/logo2.png", __ASSET__img_logo2_png);
 		type.set ("img/logo2.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/normal.png", __ASSET__img_normal_png);
@@ -81,17 +78,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("img/Playbutton.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/restart.png", __ASSET__img_restart_png);
 		type.set ("img/restart.png", Reflect.field (AssetType, "image".toUpperCase ()));
-<<<<<<< HEAD
 		className.set ("img/YouLose.png", __ASSET__img_youlose_png);
 		type.set ("img/YouLose.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/YouWon.png", __ASSET__img_youwon_png);
 		type.set ("img/YouWon.png", Reflect.field (AssetType, "image".toUpperCase ()));
-=======
-		className.set ("img/YouLost.png", __ASSET__img_youlost_png);
-		type.set ("img/YouLost.png", Reflect.field (AssetType, "image".toUpperCase ()));
-		className.set ("img/Youwon.png", __ASSET__img_youwon_png);
-		type.set ("img/Youwon.png", Reflect.field (AssetType, "image".toUpperCase ()));
->>>>>>> acc39431a4fcbe8a7eb88e68e3e618f19805d992
 		className.set ("img/zombie.gif", __ASSET__img_zombie_gif);
 		type.set ("img/zombie.gif", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/zombie.png", __ASSET__img_zombie_png);
@@ -136,11 +126,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("img/L2button.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/L3button.png", "img/L3button.png");
 		type.set ("img/L3button.png", Reflect.field (AssetType, "image".toUpperCase ()));
-<<<<<<< HEAD
 		path.set ("img/LevelSelect.png", "img/LevelSelect.png");
 		type.set ("img/LevelSelect.png", Reflect.field (AssetType, "image".toUpperCase ()));
-=======
->>>>>>> acc39431a4fcbe8a7eb88e68e3e618f19805d992
 		path.set ("img/logo2.png", "img/logo2.png");
 		type.set ("img/logo2.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/normal.png", "img/normal.png");
@@ -153,17 +140,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("img/Playbutton.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/restart.png", "img/restart.png");
 		type.set ("img/restart.png", Reflect.field (AssetType, "image".toUpperCase ()));
-<<<<<<< HEAD
 		path.set ("img/YouLose.png", "img/YouLose.png");
 		type.set ("img/YouLose.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/YouWon.png", "img/YouWon.png");
 		type.set ("img/YouWon.png", Reflect.field (AssetType, "image".toUpperCase ()));
-=======
-		path.set ("img/YouLost.png", "img/YouLost.png");
-		type.set ("img/YouLost.png", Reflect.field (AssetType, "image".toUpperCase ()));
-		path.set ("img/Youwon.png", "img/Youwon.png");
-		type.set ("img/Youwon.png", Reflect.field (AssetType, "image".toUpperCase ()));
->>>>>>> acc39431a4fcbe8a7eb88e68e3e618f19805d992
 		path.set ("img/zombie.gif", "img/zombie.gif");
 		type.set ("img/zombie.gif", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/zombie.png", "img/zombie.png");
@@ -633,10 +613,7 @@ class __ASSET__img_keyboard_png extends flash.display.BitmapData { public functi
 class __ASSET__img_l1button_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_l2button_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_l3button_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
-<<<<<<< HEAD
 class __ASSET__img_levelselect_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
-=======
->>>>>>> acc39431a4fcbe8a7eb88e68e3e618f19805d992
 class __ASSET__img_logo2_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_normal_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_pitchfork_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
@@ -685,8 +662,5 @@ class __ASSET__txt_load3_txt extends flash.utils.ByteArray { }
 
 
 
-<<<<<<< HEAD
 
-=======
->>>>>>> acc39431a4fcbe8a7eb88e68e3e618f19805d992
 #end
