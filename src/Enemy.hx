@@ -18,13 +18,14 @@ class Enemy extends Sprite
 {
 
 	var v:Float;
+	public var sprite:Sprite;
 	
 	public function new() 
 	{
 		super();
 		var zom = new Bitmap(Assets.getBitmapData("img/zombie.png"));
 		var pitchfork = new Bitmap(Assets.getBitmapData("img/pitchfork.png"));
-		var sprite = new Sprite();
+		sprite = new Sprite();
 		sprite.addChild(pitchfork);
 		pitchfork.width = pitchfork.width - 35;
 		pitchfork.x = this.x - 41;
@@ -38,6 +39,10 @@ class Enemy extends Sprite
 		this.width = 115;
 	}
 
+	public function die()
+	{
+		this.removeChild(sprite);
+	}
 	
 	public function move()
 	{

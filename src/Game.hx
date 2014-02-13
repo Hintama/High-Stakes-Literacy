@@ -31,7 +31,9 @@ class Game extends Sprite
 	var hangmanBoard:Sprite;
 	var score:Score;
 	public var zombies:List<Enemy>;
+	public var bitchimhere:Bool;
 	public var lvl:Int;
+	
 
 	public function new() 
 	{
@@ -77,6 +79,10 @@ class Game extends Sprite
 	
 	public function restart()
 	{
+		for (zombie in zombies)
+		{
+			zombie.die();
+		}
 		health = 6;
 		word = randomWord();
 		guessedLetters = [];
@@ -94,6 +100,10 @@ class Game extends Sprite
         wordBox.setTextFormat(ts);
 		guessedLettersBoard.text = "Letters Guessed: "+guessedLettersToWord(guessedLetters);
 		guessedLettersBoard.setTextFormat(ts);
+		if (lvl >= 2)
+		{
+			horde();
+		}
 	}
 	
 	function updateMissingLetters(word:String)
@@ -287,6 +297,7 @@ class Game extends Sprite
 		sprite.y = 200;*/
 		//sprite.scaleX = 120;
 		//sprite.scaleY = 120;
+		bitchimhere = false;
 		zombies = new List<Enemy>();
 		hangman = new Bitmap(Assets.getBitmapData("img/Hangman_" + Std.string(health) + ".png"));
 		hangmanBoard = new Sprite();
@@ -314,6 +325,7 @@ class Game extends Sprite
 	function zomwin()
 	{
 		health = 0;
+		bitchimhere = true;
 	}
 	
 	

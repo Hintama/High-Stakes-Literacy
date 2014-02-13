@@ -48,7 +48,7 @@ class WinMenu extends Sprite
 		Levels.addChild(LevelSelect);
 		
 		
-		Levels.addEventListener(MouseEvent.MOUSE_DOWN, BackToMenu);
+		//Levels.addEventListener(MouseEvent.MOUSE_DOWN, BackToMenu);
 		play.addEventListener(MouseEvent.MOUSE_DOWN, playGame_mouse);
 		
 		this.addChild(menu);

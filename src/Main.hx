@@ -21,6 +21,8 @@ class Main extends Sprite
 	var menu:Menu;
 	//var loseMenu:LoseMenu;
 	//var winMenu:WinMenu;
+	//var loseMenu:LoseMenu;
+	//var winMenu:WinMenu;
 	var frame_count:Int;
 	public var zombies:List<Enemy>;
 	
@@ -66,6 +68,7 @@ class Main extends Sprite
 		frame_count += 1;
 		if (frame_count % 60==0)
 		{
+			if (menu.menuOn = true)
 			game.act();
 		}
 		if (menu.menuOn == false)
