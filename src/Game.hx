@@ -81,7 +81,7 @@ class Game extends Sprite
 	{
 		for (zombie in zombies)
 		{
-			zombie.die();
+			zombie.x = 925;
 		}
 		health = 6;
 		word = randomWord();
@@ -100,10 +100,10 @@ class Game extends Sprite
         wordBox.setTextFormat(ts);
 		guessedLettersBoard.text = "Letters Guessed: "+guessedLettersToWord(guessedLetters);
 		guessedLettersBoard.setTextFormat(ts);
-		if (lvl >= 2)
-		{
-			horde();
-		}
+		//if (lvl >= 2)
+		//{
+		//	horde();
+		//}
 	}
 	
 	function updateMissingLetters(word:String)
