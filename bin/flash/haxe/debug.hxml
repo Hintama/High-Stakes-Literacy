@@ -4,6 +4,27 @@
 -cp src
 -D tools=1.2.8
 -D fdb
+<<<<<<< HEAD
+=======
+=======
+-D tools=1.2.6
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+-D fdb
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+-D fdb
+=======
+>>>>>>> 67092c60fc6b58e3901526bd78908dccbebfe1df
+>>>>>>> f2e31bbd53bdafa953601c672051cbd35b86891e
+>>>>>>> 32b8f1e9bba0a1381442141bd945b1914ef7aaee
+>>>>>>> 22726d4d73462226dd9bff0a1ebe971b1194ef9a
+>>>>>>> acc39431a4fcbe8a7eb88e68e3e618f19805d992
+>>>>>>> 0ee947c47830b8f70484e66574d028d7df9b4e0f
+>>>>>>> c0bf546c1366878d78447b856940cecafeeca193
 -D web
 -swf-version 11.2
 -swf bin/flash/bin/HSL.swf
