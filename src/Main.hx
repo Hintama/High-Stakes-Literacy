@@ -19,7 +19,7 @@ class Main extends Sprite
 	var inited:Bool;
 	var game:Game;
 	var menu:Menu;
-	var loseMenu:LoseMenu;
+	//var loseMenu:LoseMenu;
 	var winMenu:WinMenu;
 	var frame_count:Int;
 	public var zombies:List<Enemy>;
@@ -46,15 +46,15 @@ class Main extends Sprite
 		super();
 		frame_count = 0;
 		menu = new Menu();
-		loseMenu = new LoseMenu();
-		winMenu = new WinMenu();
+		//loseMenu = new LoseMenu();
+		//winMenu = new WinMenu();
 		game = new Game();
 		zombies = new List<Enemy>();
 		this.addChild(game);
 		this.addChild(menu);
-		this.addChild(WinMenu)
-		this.
-		addEventListener(Event.ADDED_TO_STAGE, added);
+		//this.addChild(WinMenu)
+		//this.
+		//addEventListener(Event.ADDED_TO_STAGE, added);
 		Lib.current.stage.addEventListener(Event.ENTER_FRAME, atRefresh);
 	}
 	
@@ -64,6 +64,7 @@ class Main extends Sprite
 		frame_count += 1;
 		if (frame_count % 60==0)
 		{
+			if (menu.menuOn = true)
 			game.act();
 		}
 		if (menu.menuOn == false)

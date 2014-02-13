@@ -25,7 +25,7 @@ class WinMenu extends Sprite
 	{
 		super();
 		
-		WinMenuOn = false;
+		WinmenuOn = false;
 		gameOn = false;
 		
 		this.x = 0;
@@ -46,13 +46,13 @@ class WinMenu extends Sprite
 		Levels.addChild(LevelSelect);
 		
 		
-		Levels.addEventListener(MouseEvent.MOUSE_DOWN, BackToMenu);
+		//Levels.addEventListener(MouseEvent.MOUSE_DOWN, BackToMenu);
 		play.addEventListener(MouseEvent.MOUSE_DOWN, playGame_mouse);
 		
 		this.addChild(menu);
 		this.addChild(title);
 		this.addChild(play);
-		this.
+		//this.
 		
 		title.x = 245;
 		title.y = 50; 
@@ -64,22 +64,22 @@ class WinMenu extends Sprite
 	}	
 	public function playGame_mouse(e)
 	{
-		menuOn = false;
+		WinmenuOn = false;
 		gameOn = true; 
 	}
 	public function playL1_mouse(e)
 	{
-		menuOn = false;
+		//menuOn = false;
 		gameOn = true; 
 	}
 	public function playL2_mouse(e)
 	{
-		menuOn = false;
+		//menuOn = false;
 		gameOn = true; 
 	}
 	public function playL3_mouse(e)
 	{
-		menuOn = false;
+		//menuOn = false;
 		gameOn = true; 
 		 
 	}

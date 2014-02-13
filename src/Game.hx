@@ -32,6 +32,8 @@ class Game extends Sprite
 	var score:Score;
 	public var zombies:List<Enemy>;
 	public var bitchimhere:Bool;
+	public var lvl:Int;
+	
 
 	public function new() 
 	{
@@ -76,6 +78,10 @@ class Game extends Sprite
 	
 	public function restart()
 	{
+		for (zombie in zombies)
+		{
+			zombie.die();
+		}
 		health = 6;
 		word = randomWord();
 		guessedLetters = [];
@@ -93,6 +99,10 @@ class Game extends Sprite
         wordBox.setTextFormat(ts);
 		guessedLettersBoard.text = "Letters Guessed: "+guessedLettersToWord(guessedLetters);
 		guessedLettersBoard.setTextFormat(ts);
+		if (lvl >= 2)
+		{
+			horde();
+		}
 	}
 	
 	function updateMissingLetters(word:String)
