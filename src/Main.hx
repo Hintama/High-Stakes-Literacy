@@ -20,7 +20,9 @@ class Main extends Sprite
 	var game:Game;
 	var menu:Menu;
 	//var loseMenu:LoseMenu;
-	var winMenu:WinMenu;
+	//var winMenu:WinMenu;
+	//var loseMenu:LoseMenu;
+	//var winMenu:WinMenu;
 	var frame_count:Int;
 	public var zombies:List<Enemy>;
 	
@@ -51,10 +53,12 @@ class Main extends Sprite
 		game = new Game();
 		zombies = new List<Enemy>();
 		this.addChild(game);
+		this.addChild(winMenu);
+		this.addChild(loseMenu);
 		this.addChild(menu);
-		//this.addChild(WinMenu)
+		//this.addChild(WinMenu);
 		//this.
-		//addEventListener(Event.ADDED_TO_STAGE, added);
+		addEventListener(Event.ADDED_TO_STAGE, added);
 		Lib.current.stage.addEventListener(Event.ENTER_FRAME, atRefresh);
 	}
 	
@@ -72,15 +76,31 @@ class Main extends Sprite
 			Actuate.tween(menu, 3, { x:0, y:600 } );
 			game.restart();
 			menu.menuOn = true;
+			
 		}
+		if (winMenu.winMenuOn == false)
+		{
+			Actuate.tween(winMenu, 3, { x:0, y:600 } );
+			game.restart();
+			winMenu.menuOn = true;
+			
+		}
+		if (loseMenu.loseMenuOn == false)
+		{
+			Actuate.tween(loseMenu, 3, { x:0, y:600 } );
+			game.restart();
+			winMenu.menuOn = true;
+			
+		}
+		
 		if (game.health == 0)
 		{
-			Actuate.tween(menu, 4, { x:0, y:0 } );
+			Actuate.tween(loseMenu, 4, { x:0, y:0 } );
 			game.restart();
 		}
 		if (game.missingLetters == 0)
 		{
-			Actuate.tween(menu, 4, { x:0, y:0 } );
+			Actuate.tween(winMenu, 4, { x:0, y:0 } );
 			game.restart();
 		}
 	}

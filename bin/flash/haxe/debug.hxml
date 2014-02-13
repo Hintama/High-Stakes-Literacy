@@ -2,7 +2,15 @@
 -lib openfl
 -lib actuate
 -cp src
+<<<<<<< HEAD
 -D tools=1.2.6
+=======
+<<<<<<< HEAD
+-D tools=1.2.6
+=======
+-D tools=1.2.8
+>>>>>>> 0bb23a35568ccd12130c510711d2bfeebe30cec1
+>>>>>>> 80a0573747f1e070dc832a0c1f0c07ec507f2ca7
 -D fdb
 -D web
 -swf-version 11.2

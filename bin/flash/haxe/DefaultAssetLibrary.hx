@@ -80,8 +80,18 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("img/restart.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/YouLose.png", __ASSET__img_youlose_png);
 		type.set ("img/YouLose.png", Reflect.field (AssetType, "image".toUpperCase ()));
+<<<<<<< HEAD
 		className.set ("img/Youwon.png", __ASSET__img_youwon_png);
 		type.set ("img/Youwon.png", Reflect.field (AssetType, "image".toUpperCase ()));
+=======
+<<<<<<< HEAD
+		className.set ("img/Youwon.png", __ASSET__img_youwon_png);
+		type.set ("img/Youwon.png", Reflect.field (AssetType, "image".toUpperCase ()));
+=======
+		className.set ("img/YouWon.png", __ASSET__img_youwon_png);
+		type.set ("img/YouWon.png", Reflect.field (AssetType, "image".toUpperCase ()));
+>>>>>>> 0bb23a35568ccd12130c510711d2bfeebe30cec1
+>>>>>>> 80a0573747f1e070dc832a0c1f0c07ec507f2ca7
 		className.set ("img/zombie.gif", __ASSET__img_zombie_gif);
 		type.set ("img/zombie.gif", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/zombie.png", __ASSET__img_zombie_png);
@@ -142,8 +152,18 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("img/restart.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/YouLose.png", "img/YouLose.png");
 		type.set ("img/YouLose.png", Reflect.field (AssetType, "image".toUpperCase ()));
+<<<<<<< HEAD
 		path.set ("img/Youwon.png", "img/Youwon.png");
 		type.set ("img/Youwon.png", Reflect.field (AssetType, "image".toUpperCase ()));
+=======
+<<<<<<< HEAD
+		path.set ("img/Youwon.png", "img/Youwon.png");
+		type.set ("img/Youwon.png", Reflect.field (AssetType, "image".toUpperCase ()));
+=======
+		path.set ("img/YouWon.png", "img/YouWon.png");
+		type.set ("img/YouWon.png", Reflect.field (AssetType, "image".toUpperCase ()));
+>>>>>>> 0bb23a35568ccd12130c510711d2bfeebe30cec1
+>>>>>>> 80a0573747f1e070dc832a0c1f0c07ec507f2ca7
 		path.set ("img/zombie.gif", "img/zombie.gif");
 		type.set ("img/zombie.gif", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/zombie.png", "img/zombie.png");

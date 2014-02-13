@@ -48,7 +48,7 @@ class Enemy extends Sprite
 	{
 		if (this.x > 175)
 		{
-			Actuate.tween(this, 1, { x:(this.x - 50), y:this.y } );
+			Actuate.tween(this, 1, { x:(this.x - 40), y:this.y } );
 		}
 	}
 	

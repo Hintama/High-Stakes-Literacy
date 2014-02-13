@@ -18,15 +18,17 @@ import openfl.Assets;
  */
 class WinMenu extends Sprite
 {
-	public var WinmenuOn:Bool;
+	public var menuOn:Bool;
+	public var winMenuOn:Bool;
 	public var gameOn:Bool;
 	
 	public function new() 
 	{
 		super();
 		
-		WinmenuOn = false;
-		gameOn = false;
+		winMenuOn = false;
+		menuOn = false;
+		
 		
 		this.x = 0;
 		this.y = 0;
@@ -52,10 +54,10 @@ class WinMenu extends Sprite
 		this.addChild(menu);
 		this.addChild(title);
 		this.addChild(play);
-		//this.
+		this.addChild(Levels);
 		
 		title.x = 245;
-		title.y = 50; 
+		title.y = 50;
 		play.x = 358.25;
 		play.y = 160; 
 		Levels.x = 322;
@@ -64,27 +66,19 @@ class WinMenu extends Sprite
 	}	
 	public function playGame_mouse(e)
 	{
-		WinmenuOn = false;
-		gameOn = true; 
+		winMenuOn = false; 
+		menuOn = false;
 	}
-	public function playL1_mouse(e)
+	public function BackToMenu(e)
 	{
-		//menuOn = false;
-		gameOn = true; 
+		winMenuOn = false; 
+		menuOn = true;
+		
 	}
-	public function playL2_mouse(e)
-	{
-		//menuOn = false;
-		gameOn = true; 
-	}
-	public function playL3_mouse(e)
-	{
-		//menuOn = false;
-		gameOn = true; 
-		 
-	}
+	
+}
 			
 		
-}
+
 	
 

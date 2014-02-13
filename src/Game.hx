@@ -38,6 +38,7 @@ class Game extends Sprite
 	public function new() 
 	{
 		super();
+		lvl = 1;
 		health = 6;
 		hiddenWord = [];
 		guessedLetters = [];
