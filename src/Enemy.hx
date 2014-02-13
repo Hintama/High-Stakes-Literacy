@@ -48,13 +48,13 @@ class Enemy extends Sprite
 	{
 		if (this.x > 175)
 		{
-			Actuate.tween(this, 1, { x:(this.x - 40), y:this.y } );
+			Actuate.tween(this, 2, { x:(this.x - 60), y:this.y } );
 		}
 	}
 	
 	function onClick(e:MouseEvent)
 	{
-		Actuate.tween(this, 0.5, { x:(this.x + 10), y:this.y } );
+		Actuate.tween(this, 1, { x:(this.x + 10), y:this.y } );
 	}
 	
 }

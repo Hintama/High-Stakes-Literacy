@@ -68,30 +68,25 @@ class Main extends Sprite
 		frame_count += 1;
 		if (frame_count % 60==0)
 		{
-			if (menu.menuOn = true)
 			game.act();
-		}
-		if (menu.menuOn == false)
-		{
-			Actuate.tween(menu, 3, { x:0, y:600 } );
-			game.restart();
-			menu.menuOn = true;
-			
 		}
 		if (menu.lvl1)
 		{
+			Actuate.tween(menu, 3, { x:0, y:600 } );
 			game.lvl = 1;
 			game.restart();
 			menu.lvl1 = false;
 		}
 		if (menu.lvl2)
 		{
+			Actuate.tween(menu, 3, { x:0, y:600 } );
 			game.lvl = 2;
 			game.restart();
 			menu.lvl2 = false;
 		}
 		if (menu.lvl3)
 		{
+			Actuate.tween(menu, 3, { x:0, y:600 } );
 			game.lvl = 3;
 			game.restart();
 			menu.lvl3 = false;
