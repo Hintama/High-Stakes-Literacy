@@ -39,7 +39,7 @@ class Enemy extends Sprite
 		this.height = 160;
 		this.width = 115;
 		//counter = Std.int(Math.random() * 10);
-		period = Math.random() ;
+		period = Math.random();
 	}
 
 	public function die()

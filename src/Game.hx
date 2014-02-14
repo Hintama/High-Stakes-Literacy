@@ -84,7 +84,7 @@ class Game extends Sprite
 	{
 		for (zombie in zombies)
 		{
-			zombie.x = 925;
+			zombie.x = 825 + 150 * Math.random();
 		}
 		health = 6;
 		word = randomWord();
