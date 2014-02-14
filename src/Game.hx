@@ -291,7 +291,7 @@ class Game extends Sprite
 		var line:String;
 		line = Assets.getText("txt/load"+Std.string(lvl)+".txt");
 		var words:Array<String> = line.split(",");
-		return words[Std.random(25)];
+		return words[Std.random(120)];
 	}
 	
 	function setUp()

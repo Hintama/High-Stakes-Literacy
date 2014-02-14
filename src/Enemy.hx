@@ -38,7 +38,7 @@ class Enemy extends Sprite
 		this.y = 220;
 		this.height = 160;
 		this.width = 115;
-		//counter = Std.int(Math.random() * 10);
+		counter =1;
 		period = Math.random();
 	}
 
@@ -49,8 +49,8 @@ class Enemy extends Sprite
 	
 	public function move()
 	{
-		
-		this.y = this.y + 15 * Math.sin(this.x / period);
+		counter ++;
+		this.y = this.y + 15 * Math.sin(this.counter / period);
 		if (this.x > 175)
 		{
 			Actuate.tween(this, 0.03, { x:(this.x - 1), y:this.y } );
