@@ -65,25 +65,26 @@ class Main extends Sprite
 		if (frame_count % 2==0)
 		{
 			//if (menu.menuOn = true)
-			if(game.health > 0 && loseMenu.zombDont==false && menu.zombDont==false && winMenu.zombDont==false) game.act();
+			if ((game.health > 0) && (loseMenu.zombDont == false) && (menu.zombDont == false) && (winMenu.zombDont == false)) 
+			game.act();
 		}
 		if (menu.lvl1)
 		{
-			Actuate.tween(menu, 3, { x:0, y:600 } );
+			Actuate.tween(menu, 3, { x:0, y:480 } );
 			game.lvl = 1;
 			game.restart();
 			menu.lvl1 = false;
 		}
 		if (menu.lvl2)
 		{
-			Actuate.tween(menu, 3, { x:0, y:600 } );
+			Actuate.tween(menu, 3, { x:0, y:480 } );
 			game.lvl = 2;
 			game.restart();
 			menu.lvl2 = false;
 		}
 		if (menu.lvl3)
 		{
-			Actuate.tween(menu, 3, { x:0, y:600 } );
+			Actuate.tween(menu, 3, { x:0, y:480 } );
 			game.lvl = 3;
 			game.restart();
 			menu.lvl3 = false;
@@ -103,26 +104,28 @@ class Main extends Sprite
 		if (loseMenu.menuOn==true)
 		{
 			Actuate.tween(menu, 3, { x:0, y:0 } );
-			Actuate.tween(loseMenu, 3, { x:0, y:600 } );
+			menu.zombDont = true;
+			Actuate.tween(loseMenu, 3, { x:0, y:-480 } );
 			loseMenu.menuOn = false;
 			
 		}
 		if (winMenu.menuOn==true)
 		{
 			Actuate.tween(menu, 3, { x:0, y:0 } );
-			Actuate.tween(winMenu, 3, { x:0, y:600 } );
+			menu.zombDont = true;
+			Actuate.tween(winMenu, 3, { x:0, y:-480 } );
 			winMenu.menuOn = false;
 			
 		}
 		if (loseMenu.loseMenuOn)
 		{
-			Actuate.tween(loseMenu, 3, { x:0, y:600 } );
+			Actuate.tween(loseMenu, 3, { x:0, y:480 } );
 			loseMenu.loseMenuOn = false;
 			game.restart();
 		}
 		if (winMenu.winMenuOn)
 		{
-			Actuate.tween(winMenu, 3, { x:0, y:600 } );
+			Actuate.tween(winMenu, 3, { x:0, y:480 } );
 			winMenu.winMenuOn = false;
 			game.restart();
 		}

@@ -32,7 +32,7 @@ class LoseMenu extends Sprite
 		
 		
 		this.x = 0;
-		this.y = 600;
+		this.y = -480;
 		var logo = new Bitmap(Assets.getBitmapData("img/YouLose.png"));
 		var background = new Bitmap(Assets.getBitmapData("img/background.png"));
 		var playButton = new Bitmap(Assets.getBitmapData("img/play2.png"));
@@ -73,7 +73,7 @@ class LoseMenu extends Sprite
 	public function BackToMenu(e)
 	{
 	    menuOn = true; 
-		zombDont = true;
+		zombDont = false;
 	}
 	
 			
