@@ -315,13 +315,21 @@ class Game extends Sprite
 	
 	public function horde()
 	{
-		for ( x in 0 ... 1)
+		var hordLvl:Int;
+		hordLvl = 1;
+		if (lvl == 2)
+		{
+			hordLvl = 3;
+		}
+		if (lvl == 3)
+		{
+			hordLvl = 5;
+		}
+		for ( x in 0 ... hordLvl)
 		{
 			var zombie = new Enemy();
 			this.addChild(zombie);
 			zombies.add(zombie);
-			zombie.move();
-			
 		}
 	}
 	
