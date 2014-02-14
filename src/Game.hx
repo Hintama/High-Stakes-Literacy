@@ -69,7 +69,10 @@ class Game extends Sprite
 	{
 		for (zombie in zombies)
 		{
-			zombie.move();
+			if (lvl > 1)
+			{
+				zombie.move();
+			}
 			if (zombie.x < 175)
 			{
 				zomwin();
