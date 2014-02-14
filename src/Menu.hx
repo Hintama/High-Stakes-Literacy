@@ -23,10 +23,15 @@ class Menu extends Sprite
 	public var lvl2:Bool;
 	public var lvl3:Bool;
 	public var zombDont:Bool;
+	public var score:Score;
 	
 	public function new() 
 	{
 		super();
+		
+		score = new Score();
+		score.y = 400;
+		score.x = 500;
 		
 		lvl1 = false;
 		lvl2 = false;
@@ -48,7 +53,8 @@ class Menu extends Sprite
 		var L3b = new Sprite();
 		
 		title.addChild(logo);
-		menu.addChild(background);
+		this.addChild(background);
+		this.addChild(score);
 		L1b.addChild(L1button);
 		L2b.addChild(L2button);
 		L3b.addChild(L3button);

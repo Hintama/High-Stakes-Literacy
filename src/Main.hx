@@ -94,12 +94,18 @@ class Main extends Sprite
 			Actuate.tween(loseMenu, 3, { x:0, y:0 } );
 			game.restart();
 			loseMenu.zombDont = true;
+			if (game.lvl == 1) menu.score.scoreRefresh( -3);
+			if (game.lvl == 2) menu.score.scoreRefresh( -2);
+			if (game.lvl == 3) menu.score.scoreRefresh( -1);
 		}
 		if (game.missingLetters == 0)
 		{
 			Actuate.tween(winMenu, 3, { x:0, y:0 } );
 			game.restart();
 			winMenu.zombDont = true;
+			if (game.lvl == 1) menu.score.scoreRefresh( 1);
+			if (game.lvl == 2) menu.score.scoreRefresh( 2);
+			if (game.lvl == 3) menu.score.scoreRefresh( 3);
 		}
 		if (loseMenu.menuOn==true)
 		{

@@ -29,7 +29,6 @@ class Game extends Sprite
 	var maskedWord:String;
 	var hangman:Bitmap;
 	var hangmanBoard:Sprite;
-	var score:Score;
 	public var zombies:List<Enemy>;
 	public var bitchimhere:Bool;
 	public var lvl:Int;
@@ -44,9 +43,6 @@ class Game extends Sprite
 		guessedLetters = [];
 		word = randomWord();
 		missingLetters = word.length;
-		score = new Score();
-		score.x = 600;
-		score.y = 400;
 		setUp();
 		for (x in 0...word.length)
 		{

@@ -53,13 +53,13 @@ class Enemy extends Sprite
 		this.y = this.y + 15 * Math.sin(this.counter / period);
 		if (this.x > 175)
 		{
-			Actuate.tween(this, 0.03, { x:(this.x - 1), y:this.y } );
+			this.x = x - 2;
 		}
 	}
 	
 	function onClick(e:MouseEvent)
 	{
-		Actuate.tween(this, .4, { x:(this.x + 20), y:this.y } );
+		Actuate.tween(this, .4, { x:(this.x + 10), y:this.y } );
 	}
 	
 }
