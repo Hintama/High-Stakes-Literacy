@@ -34,7 +34,7 @@ class Enemy extends Sprite
 		this.addChild(sprite);
 		sprite.addEventListener(MouseEvent.MOUSE_DOWN, onClick);
 		this.v = -0.5;
-		this.x = 900;
+		this.x = 825 + 150 * Math.random();
 		this.y = 220;
 		this.height = 160;
 		this.width = 115;
@@ -59,7 +59,7 @@ class Enemy extends Sprite
 	
 	function onClick(e:MouseEvent)
 	{
-		Actuate.tween(this, .4, { x:(this.x + 10), y:this.y } );
+		Actuate.tween(this, .4, { x:(this.x + 20), y:this.y } );
 	}
 	
 }
