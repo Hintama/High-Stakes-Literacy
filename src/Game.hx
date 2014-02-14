@@ -84,7 +84,6 @@ class Game extends Sprite
 	{
 		if (zombies.length > 0)
 		{
-			zombie.x = 825 + 150 * Math.random();
 			for (zombie in zombies)
 			{
 				zombie.removeChildAt(0);

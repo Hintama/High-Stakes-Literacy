@@ -31,7 +31,7 @@ class WinMenu extends Sprite
 		zombDont = false;
 		
 		this.x = 0;
-		this.y = 600;
+		this.y = -480;
 		var logo = new Bitmap(Assets.getBitmapData("img/YouWon.png"));
 		var background = new Bitmap(Assets.getBitmapData("img/background.png"));
 		var playButton = new Bitmap(Assets.getBitmapData("img/play2.png"));

@@ -34,7 +34,7 @@ class Enemy extends Sprite
 		this.addChild(sprite);
 		sprite.addEventListener(MouseEvent.MOUSE_DOWN, onClick);
 		this.v = -0.5;
-		this.x = 900;
+		this.x = 825 + 150 * Math.random();
 		this.y = 220;
 		this.height = 160;
 		this.width = 115;
