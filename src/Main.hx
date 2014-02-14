@@ -65,8 +65,7 @@ class Main extends Sprite
 		if (frame_count % 6==0)
 		{
 			//if (menu.menuOn = true)
-			if(game.health > 0) 
-			game.act();
+			if(game.health > 0 && loseMenu.zombDont==false && menu.zombDont==false && winMenu.zombDont==false) game.act();
 		}
 		if (menu.lvl1)
 		{
@@ -93,18 +92,25 @@ class Main extends Sprite
 		{
 			Actuate.tween(loseMenu, 3, { x:0, y:0 } );
 			game.restart();
+			loseMenu.zombDont = true;
 		}
 		if (game.missingLetters == 0)
 		{
 			Actuate.tween(winMenu, 3, { x:0, y:0 } );
 			game.restart();
+			winMenu.zombDont = true;
 		}
-		if (loseMenu.menuOn || winMenu.menuOn)
+		if (loseMenu.menuOn==true)
 		{
 			Actuate.tween(menu, 3, { x:0, y:0 } );
 			Actuate.tween(loseMenu, 3, { x:0, y:600 } );
-			Actuate.tween(winMenu, 3, { x:0, y:600 } );
 			loseMenu.menuOn = false;
+			
+		}
+		if (winMenu.menuOn==true)
+		{
+			Actuate.tween(menu, 3, { x:0, y:0 } );
+			Actuate.tween(winMenu, 3, { x:0, y:600 } );
 			winMenu.menuOn = false;
 			
 		}

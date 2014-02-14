@@ -82,9 +82,13 @@ class Game extends Sprite
 	
 	public function restart()
 	{
-		for (zombie in zombies)
+		if (zombies.length > 0)
 		{
-			zombie.x = 925;
+			for (zombie in zombies)
+			{
+				zombie.removeChildAt(0);
+			}
+			zombies.clear();
 		}
 		health = 6;
 		word = randomWord();
@@ -103,10 +107,10 @@ class Game extends Sprite
         wordBox.setTextFormat(ts);
 		guessedLettersBoard.text = "Letters Guessed: "+guessedLettersToWord(guessedLetters);
 		guessedLettersBoard.setTextFormat(ts);
-		//if (lvl >= 2)
-		//{
-		//	horde();
-		//}
+		if (lvl >= 2)
+		{
+			horde();
+		}
 	}
 	
 	function updateMissingLetters(word:String)
@@ -285,7 +289,7 @@ class Game extends Sprite
 	function randomWord()
 	{
 		var line:String;
-		line = Assets.getText("txt/load1.txt");
+		line = Assets.getText("txt/load"+Std.string(lvl)+".txt");
 		var words:Array<String> = line.split(",");
 		return words[Std.random(25)];
 	}

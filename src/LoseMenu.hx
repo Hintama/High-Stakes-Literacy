@@ -20,6 +20,7 @@ class LoseMenu extends Sprite
 {
 	public var loseMenuOn:Bool;
 	public var menuOn:Bool;
+	public var zombDont:Bool;
 	
 	public function new() 
 	{
@@ -27,6 +28,7 @@ class LoseMenu extends Sprite
 		
 		menuOn = false;
 		loseMenuOn = false;
+		zombDont = false;
 		
 		
 		this.x = 0;
@@ -66,11 +68,12 @@ class LoseMenu extends Sprite
 	public function playGame_mouse(e)
 	{
 		loseMenuOn = true;
+		zombDont = false;
 	}
 	public function BackToMenu(e)
 	{
 	    menuOn = true; 
-		
+		zombDont = true;
 	}
 	
 			

@@ -22,6 +22,7 @@ class Menu extends Sprite
 	public var lvl1:Bool;
 	public var lvl2:Bool;
 	public var lvl3:Bool;
+	public var zombDont:Bool;
 	
 	public function new() 
 	{
@@ -30,6 +31,7 @@ class Menu extends Sprite
 		lvl1 = false;
 		lvl2 = false;
 		lvl3 = false;
+		zombDont = false;
 		
 		this.x = 0;
 		this.y = 0;
@@ -76,14 +78,17 @@ class Menu extends Sprite
 	public function playL1_mouse(e)
 	{
 		lvl1 = true;
+		zombDont = false;
 	}
 	public function playL2_mouse(e)
 	{
 		lvl2 = true;
+		zombDont = false;
 	}
 	public function playL3_mouse(e)
 	{
 		lvl3 = true;
+		zombDont = false;
 	}
 			
 		
