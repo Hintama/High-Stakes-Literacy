@@ -1,4 +1,4 @@
-package ;
+ package ;
 
 import flash.display.Sprite;
 import flash.events.Event;
@@ -19,10 +19,8 @@ class Main extends Sprite
 	var inited:Bool;
 	var game:Game;
 	var menu:Menu;
-	//var loseMenu:LoseMenu;
-	//var winMenu:WinMenu;
-	//var loseMenu:LoseMenu;
-	//var winMenu:WinMenu;
+	var loseMenu:LoseMenu;
+	var winMenu:WinMenu;
 	var frame_count:Int;
 	public var zombies:List<Enemy>;
 	
@@ -48,16 +46,14 @@ class Main extends Sprite
 		super();
 		frame_count = 0;
 		menu = new Menu();
-		//loseMenu = new LoseMenu();
-		//winMenu = new WinMenu();
+		loseMenu = new LoseMenu();
+		winMenu = new WinMenu();
 		game = new Game();
 		zombies = new List<Enemy>();
 		this.addChild(game);
-		//this.addChild(winMenu);
-		//this.addChild(loseMenu);
+		this.addChild(winMenu);
+		this.addChild(loseMenu);
 		this.addChild(menu);
-		//this.addChild(WinMenu);
-		//this.
 		addEventListener(Event.ADDED_TO_STAGE, added);
 		Lib.current.stage.addEventListener(Event.ENTER_FRAME, atRefresh);
 	}
@@ -93,29 +89,35 @@ class Main extends Sprite
 			game.restart();
 			menu.lvl3 = false;
 		}
-		//if (winMenu.winMenuOn == false)
-		//{
-			//Actuate.tween(winMenu, 3, { x:0, y:600 } );
-			//game.restart();
-			//winMenu.menuOn = true;
-			//
-		//}
-		//if (loseMenu.loseMenuOn == false)
-		//{
-			//Actuate.tween(loseMenu, 3, { x:0, y:600 } );
-			//game.restart();
-			//winMenu.menuOn = true;
-			//
-		//}
-		
 		if (game.health == 0)
 		{
-			Actuate.tween(menu, 4, { x:0, y:0 } );
+			Actuate.tween(loseMenu, 3, { x:0, y:0 } );
 			game.restart();
 		}
 		if (game.missingLetters == 0)
 		{
-			Actuate.tween(menu, 4, { x:0, y:0 } );
+			Actuate.tween(winMenu, 3, { x:0, y:0 } );
+			game.restart();
+		}
+		if (loseMenu.menuOn || winMenu.menuOn)
+		{
+			Actuate.tween(menu, 3, { x:0, y:0 } );
+			Actuate.tween(loseMenu, 3, { x:0, y:600 } );
+			Actuate.tween(winMenu, 3, { x:0, y:600 } );
+			loseMenu.menuOn = false;
+			winMenu.menuOn = false;
+			
+		}
+		if (loseMenu.loseMenuOn)
+		{
+			Actuate.tween(loseMenu, 3, { x:0, y:600 } );
+			loseMenu.loseMenuOn = false;
+			game.restart();
+		}
+		if (winMenu.winMenuOn)
+		{
+			Actuate.tween(winMenu, 3, { x:0, y:600 } );
+			winMenu.winMenuOn = false;
 			game.restart();
 		}
 	}

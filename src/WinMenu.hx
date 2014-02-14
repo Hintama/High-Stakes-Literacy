@@ -18,9 +18,8 @@ import openfl.Assets;
  */
 class WinMenu extends Sprite
 {
-	public var menuOn:Bool;
 	public var winMenuOn:Bool;
-	public var gameOn:Bool;
+	public var menuOn:Bool;
 	
 	public function new() 
 	{
@@ -31,7 +30,7 @@ class WinMenu extends Sprite
 		
 		
 		this.x = 0;
-		this.y = 0;
+		this.y = 600;
 		var logo = new Bitmap(Assets.getBitmapData("img/YouWon.png"));
 		var background = new Bitmap(Assets.getBitmapData("img/background.png"));
 		var playButton = new Bitmap(Assets.getBitmapData("img/play2.png"));
@@ -66,13 +65,11 @@ class WinMenu extends Sprite
 	}	
 	public function playGame_mouse(e)
 	{
-		winMenuOn = false; 
-		menuOn = false;
+		winMenuOn = true; 
 	}
 	public function BackToMenu(e)
 	{
-		winMenuOn = false; 
-		menuOn = true;
+		menuOn = true; 
 		
 	}
 	
