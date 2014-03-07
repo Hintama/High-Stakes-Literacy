@@ -679,8 +679,6 @@ class __ASSET__audio_nearmusic_mp3 extends flash.media.Sound { }
 
 
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 0833e2d5c1f31e83aadae94917cd251fea468ce5
+
 #end
