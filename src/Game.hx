@@ -4,12 +4,15 @@ import flash.display.Bitmap;
 import flash.display.BitmapData;
 import flash.display.Sprite;
 import flash.Lib;
+import flash.media.SoundChannel;
 import flash.text.TextField;
 import flash.text.TextFormat;
 import String;
 import openfl.Assets;
 import flash.events.KeyboardEvent;
 import flash.ui.Keyboard;
+import flash.media.Sound;
+import flash.media.SoundTransform;
 
 /**
  * ...
@@ -33,12 +36,19 @@ class Game extends Sprite
 	public var bitchimhere:Bool;
 	public var lvl:Int;
 	public var canguess:Bool;
+	var sound:Sound;
+	var myChannel:SoundChannel;
+	var transfor:SoundTransform;
 	
 
 	public function new() 
 	{
 		super();
 		canguess = false;
+		sound = Assets.getSound("audio/NearMusic.mp3");
+		myChannel = sound.play(0,-1);
+		transfor = new SoundTransform();
+		transfor.volume = 0.0;
 		lvl = 1;
 		health = 6;
 		hiddenWord = [];
@@ -65,8 +75,8 @@ class Game extends Sprite
 	
 	public function act()
 	{
-		var zombiexS:Int = 0;
-		var zCounter:Int = 0;
+		var zombiexS:Float = 0;
+		var zCounter:Float = 0;
 		var averagedPercent:Float = 0.0;
 		for (zombie in zombies)
 		{
@@ -74,15 +84,16 @@ class Game extends Sprite
 			{
 				zombie.move();
 				zCounter += 1;
-				zombiexS += Std.int((zombie.x - 175)/800);
+				zombiexS += (zombie.x - 175)/800;
 			}
 			if (zombie.x < 175)
 			{
 				zomwin();
 			}
 		}
-		averagedPercent = zombiexS / zCounter;
-		
+		averagedPercent = zombiexS * 1.0 / zCounter * 1.0;
+		transfor.volume = (1-averagedPercent)*1.2;
+		myChannel.soundTransform = transfor;
 	}
 	
 	public function restart()

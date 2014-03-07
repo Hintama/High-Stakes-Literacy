@@ -10,6 +10,8 @@ import flash.display.Bitmap;
 import flash.text.TextField;
 import flash.text.TextFormat;
 import openfl.Assets;
+import flash.text.TextField;
+import flash.text.TextFormat;
 
 
 /**
@@ -21,6 +23,8 @@ class LoseMenu extends Sprite
 	public var loseMenuOn:Bool;
 	public var menuOn:Bool;
 	public var zombDont:Bool;
+	var wordBox:TextField;
+	var ts:TextFormat;
 	
 	public function new() 
 	{
@@ -63,6 +67,18 @@ class LoseMenu extends Sprite
 		play.y = 160; 
 		Levels.x = 322;
 		Levels.y = 220;
+		
+		ts = new TextFormat();
+        ts.font = "Chiller";
+        ts.size = 35;               
+        ts.color=0xFFFFFF;
+        wordBox = new TextField();
+        wordBox.text = "Hint: the zombies are clickable!";
+        wordBox.setTextFormat(ts);
+        this.addChild(wordBox);
+		wordBox.width = 400;
+		wordBox.x = 300;
+		wordBox.y = 300;
 		
 	}	
 	public function playGame_mouse(e)

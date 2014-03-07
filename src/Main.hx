@@ -57,9 +57,9 @@ class Main extends Sprite
 		addEventListener(Event.ADDED_TO_STAGE, added);
 		Lib.current.stage.addEventListener(Event.ENTER_FRAME, atRefresh);
 		var background = Assets.getSound("audio/Megatone_-_01_-_First_Space_Voyage.mp3");
-		var nearMusic = Assets.getSound("audio/NearMusic.mp3");
+		//var nearMusic = Assets.getSound("audio/NearMusic.mp3");
 		background.play(0,-1);
-		nearMusic.play(0, -1);
+		//nearMusic.play(0, -1);
 	}
 	
 
