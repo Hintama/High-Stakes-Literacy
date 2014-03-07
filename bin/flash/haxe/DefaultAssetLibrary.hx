@@ -40,6 +40,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("img/background.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/easy.png", __ASSET__img_easy_png);
 		type.set ("img/easy.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		className.set ("img/Hangman_-1.png", __ASSET__img_hangman__1_png);
+		type.set ("img/Hangman_-1.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/Hangman_0.png", __ASSET__img_hangman_0_png);
 		type.set ("img/Hangman_0.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		className.set ("img/Hangman_1.png", __ASSET__img_hangman_1_png);
@@ -106,6 +108,8 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("img/background.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/easy.png", "img/easy.png");
 		type.set ("img/easy.png", Reflect.field (AssetType, "image".toUpperCase ()));
+		path.set ("img/Hangman_-1.png", "img/Hangman_-1.png");
+		type.set ("img/Hangman_-1.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/Hangman_0.png", "img/Hangman_0.png");
 		type.set ("img/Hangman_0.png", Reflect.field (AssetType, "image".toUpperCase ()));
 		path.set ("img/Hangman_1.png", "img/Hangman_1.png");
@@ -609,6 +613,7 @@ class DefaultAssetLibrary extends AssetLibrary {
 
 class __ASSET__img_background_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_easy_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
+class __ASSET__img_hangman__1_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_hangman_0_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_hangman_1_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
 class __ASSET__img_hangman_2_png extends flash.display.BitmapData { public function new () { super (0, 0); } }
@@ -674,5 +679,8 @@ class __ASSET__audio_nearmusic_mp3 extends flash.media.Sound { }
 
 
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> 0833e2d5c1f31e83aadae94917cd251fea468ce5
 #end
