@@ -94,10 +94,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("txt/load2.txt", Reflect.field (AssetType, "text".toUpperCase ()));
 		className.set ("txt/load3.txt", __ASSET__txt_load3_txt);
 		type.set ("txt/load3.txt", Reflect.field (AssetType, "text".toUpperCase ()));
-		className.set ("audio/La_Desunion_-_02_-_Black_Museum.mp3", __ASSET__audio_la_desunion___02___black_museum_mp3);
-		type.set ("audio/La_Desunion_-_02_-_Black_Museum.mp3", Reflect.field (AssetType, "music".toUpperCase ()));
 		className.set ("audio/Megatone_-_01_-_First_Space_Voyage.mp3", __ASSET__audio_megatone___01___first_space_voyage_mp3);
 		type.set ("audio/Megatone_-_01_-_First_Space_Voyage.mp3", Reflect.field (AssetType, "music".toUpperCase ()));
+		className.set ("audio/NearMusic.mp3", __ASSET__audio_nearmusic_mp3);
+		type.set ("audio/NearMusic.mp3", Reflect.field (AssetType, "music".toUpperCase ()));
 		
 		
 		#elseif html5
@@ -160,10 +160,10 @@ class DefaultAssetLibrary extends AssetLibrary {
 		type.set ("txt/load2.txt", Reflect.field (AssetType, "text".toUpperCase ()));
 		path.set ("txt/load3.txt", "txt/load3.txt");
 		type.set ("txt/load3.txt", Reflect.field (AssetType, "text".toUpperCase ()));
-		path.set ("audio/La_Desunion_-_02_-_Black_Museum.mp3", "audio/La_Desunion_-_02_-_Black_Museum.mp3");
-		type.set ("audio/La_Desunion_-_02_-_Black_Museum.mp3", Reflect.field (AssetType, "music".toUpperCase ()));
 		path.set ("audio/Megatone_-_01_-_First_Space_Voyage.mp3", "audio/Megatone_-_01_-_First_Space_Voyage.mp3");
 		type.set ("audio/Megatone_-_01_-_First_Space_Voyage.mp3", Reflect.field (AssetType, "music".toUpperCase ()));
+		path.set ("audio/NearMusic.mp3", "audio/NearMusic.mp3");
+		type.set ("audio/NearMusic.mp3", Reflect.field (AssetType, "music".toUpperCase ()));
 		
 		
 		#else
@@ -636,8 +636,8 @@ class __ASSET__img_zombiepitchfork_png extends flash.display.BitmapData { public
 class __ASSET__txt_load1_txt extends flash.utils.ByteArray { }
 class __ASSET__txt_load2_txt extends flash.utils.ByteArray { }
 class __ASSET__txt_load3_txt extends flash.utils.ByteArray { }
-class __ASSET__audio_la_desunion___02___black_museum_mp3 extends flash.media.Sound { }
 class __ASSET__audio_megatone___01___first_space_voyage_mp3 extends flash.media.Sound { }
+class __ASSET__audio_nearmusic_mp3 extends flash.media.Sound { }
 
 
 #elseif html5
