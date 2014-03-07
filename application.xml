@@ -21,6 +21,7 @@
 	<icon path="assets/openfl.svg" />
 	<assets path="assets/img" rename="img" />
 	<assets path="assets/txt" rename="txt" />
+	<assets path="Assets/audio" rename="audio" type="audio" include="*" />
 	
 	<!-- optimize output
 	<haxeflag name="-dce full" /> -->
