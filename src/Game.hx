@@ -17,9 +17,9 @@ import flash.ui.Keyboard;
  */
 class Game extends Sprite
 {
-	var word:String;
-	var wordBox:TextField;
-	var ts:TextFormat;
+	public var word:String;
+	public var wordBox:TextField;
+	public var ts:TextFormat;
 	var guessedLettersBoard:TextField;
 	public var health:Int;
 	public var missingLetters:Int;
@@ -32,11 +32,13 @@ class Game extends Sprite
 	public var zombies:List<Enemy>;
 	public var bitchimhere:Bool;
 	public var lvl:Int;
+	public var canguess:Bool;
 	
 
 	public function new() 
 	{
 		super();
+		canguess = false;
 		lvl = 1;
 		health = 6;
 		hiddenWord = [];
@@ -63,17 +65,24 @@ class Game extends Sprite
 	
 	public function act()
 	{
+		var zombiexS:Int = 0;
+		var zCounter:Int = 0;
+		var averagedPercent:Float = 0.0;
 		for (zombie in zombies)
 		{
 			if (lvl > 1)
 			{
 				zombie.move();
+				zCounter += 1;
+				zombiexS += Std.int((zombie.x - 175)/800);
 			}
 			if (zombie.x < 175)
 			{
 				zomwin();
 			}
 		}
+		averagedPercent = zombiexS / zCounter;
+		
 	}
 	
 	public function restart()
@@ -135,82 +144,85 @@ class Game extends Sprite
 	
 	function traceKeyboard(e : KeyboardEvent)
 	{
-		var key:String;
-		key = "";
-		var contains:Bool;
-		contains = false;
-		input = e.keyCode;
-		
-		if (input == 65)
-			key = 'a';
-		if (input == 66)
-			key = 'b';
-		if (input == 67)
-			key = 'c';
-		if (input == 68)
-			key = 'd';
-		if (input == 69)
-			key = 'e';
-		if (input == 70)
-			key = 'f';
-		if (input == 71)
-			key = 'g';
-		if (input == 72)
-			key = 'h';
-		if (input == 73)
-			key = 'i';
-		if (input == 74)
-			key = 'j';
-		if (input == 75)
-			key = 'k';
-		if (input == 76)
-			key = 'l';
-		if (input == 77)
-			key = 'm';
-		if (input == 78)
-			key = 'n';
-		if (input == 79)
-			key = 'o';
-		if (input == 80)
-			key = 'p';
-		if (input == 81)
-			key = 'q';
-		if (input == 82)
-			key = 'r';
-		if (input == 83)
-			key = 's';
-		if (input == 84)
-			key = 't';
-		if (input == 85)
-			key = 'u';
-		if (input == 86)
-			key = 'v';
-		if (input == 87)
-			key = 'w';
-		if (input == 88)
-			key = 'x';
-		if (input == 89)
-			key = 'y';
-		if (input == 90)
-			key = 'z';
-		if (key.length != 0)
+		if (canguess)
 		{
+			var key:String;
+			key = "";
+			var contains:Bool;
+			contains = false;
+			input = e.keyCode;
 			
-			for (char in guessedLetters)
+			if (input == 65)
+				key = 'a';
+			if (input == 66)
+				key = 'b';
+			if (input == 67)
+				key = 'c';
+			if (input == 68)
+				key = 'd';
+			if (input == 69)
+				key = 'e';
+			if (input == 70)
+				key = 'f';
+			if (input == 71)
+				key = 'g';
+			if (input == 72)
+				key = 'h';
+			if (input == 73)
+				key = 'i';
+			if (input == 74)
+				key = 'j';
+			if (input == 75)
+				key = 'k';
+			if (input == 76)
+				key = 'l';
+			if (input == 77)
+				key = 'm';
+			if (input == 78)
+				key = 'n';
+			if (input == 79)
+				key = 'o';
+			if (input == 80)
+				key = 'p';
+			if (input == 81)
+				key = 'q';
+			if (input == 82)
+				key = 'r';
+			if (input == 83)
+				key = 's';
+			if (input == 84)
+				key = 't';
+			if (input == 85)
+				key = 'u';
+			if (input == 86)
+				key = 'v';
+			if (input == 87)
+				key = 'w';
+			if (input == 88)
+				key = 'x';
+			if (input == 89)
+				key = 'y';
+			if (input == 90)
+				key = 'z';
+			if (key.length != 0)
 			{
-				if (char == key)
+				
+				for (char in guessedLetters)
 				{
-					contains = true;
+					if (char == key)
+					{
+						contains = true;
+					}
 				}
-			}
-			if (!contains) 
-			{
-				guessedLetters.push(key);
-				maskedWord = guessingWord(hiddenWord, guessedLetters);
-				guessedLettersBoard.text = "Guessed Letters: "+guessedLettersToWord(guessedLetters);
-				guessedLettersBoard.setTextFormat(ts);
-				wordBox.text = maskedWord;
-				wordBox.setTextFormat(ts);
+				if (!contains) 
+				{
+					guessedLetters.push(key);
+					maskedWord = guessingWord(hiddenWord, guessedLetters);
+					guessedLettersBoard.text = "Guessed Letters: "+guessedLettersToWord(guessedLetters);
+					guessedLettersBoard.setTextFormat(ts);
+					wordBox.text = maskedWord;
+					wordBox.setTextFormat(ts);
+				}
 			}
 		}
 	}

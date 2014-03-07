@@ -56,11 +56,22 @@ class Main extends Sprite
 		this.addChild(menu);
 		addEventListener(Event.ADDED_TO_STAGE, added);
 		Lib.current.stage.addEventListener(Event.ENTER_FRAME, atRefresh);
+		//music function here (main background music that is)?
 	}
 	
 
 	function atRefresh(e)
 	{
+		if (game.health == 0)
+		{
+			game.canguess = false;
+			game.wordBox.text = game.word;
+			game.wordBox.setTextFormat(game.ts);
+			if (frame_count % 300 == 0)
+			{
+				game.health -= 1;
+			}
+		}
 		frame_count += 1;
 		if (frame_count % 2==0)
 		{
@@ -74,6 +85,7 @@ class Main extends Sprite
 			game.lvl = 1;
 			game.restart();
 			menu.lvl1 = false;
+			game.canguess = true;
 		}
 		if (menu.lvl2)
 		{
@@ -81,6 +93,7 @@ class Main extends Sprite
 			game.lvl = 2;
 			game.restart();
 			menu.lvl2 = false;
+			game.canguess = true;
 		}
 		if (menu.lvl3)
 		{
@@ -88,8 +101,9 @@ class Main extends Sprite
 			game.lvl = 3;
 			game.restart();
 			menu.lvl3 = false;
+			game.canguess = true;
 		}
-		if (game.health == 0)
+		if (game.health == -1)
 		{
 			Actuate.tween(loseMenu, 3, { x:0, y:0 } );
 			game.restart();
@@ -128,12 +142,14 @@ class Main extends Sprite
 			Actuate.tween(loseMenu, 3, { x:0, y:480 } );
 			loseMenu.loseMenuOn = false;
 			game.restart();
+			game.canguess = true;
 		}
 		if (winMenu.winMenuOn)
 		{
 			Actuate.tween(winMenu, 3, { x:0, y:480 } );
 			winMenu.winMenuOn = false;
 			game.restart();
+			game.canguess = true;
 		}
 	}
 	function added(e) 
