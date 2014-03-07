@@ -50,7 +50,7 @@ class Enemy extends Sprite
 	public function move()
 	{
 		counter ++;
-		this.y = this.y + 15 * Math.sin(this.counter / period);
+		this.y = this.y + 15 * Math.sin(this.counter);
 		if (this.x > 175)
 		{
 			this.x = x - 2;

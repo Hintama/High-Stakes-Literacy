@@ -349,6 +349,9 @@ class Game extends Sprite
 	{
 		health = 0;
 		bitchimhere = true;
+		hangmanBoard.removeChild(hangman);
+		hangman = new Bitmap(Assets.getBitmapData("img/Hangman_-1.png"));
+		hangmanBoard.addChild(hangman);
 	}
 	
 	
