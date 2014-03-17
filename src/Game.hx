@@ -92,7 +92,7 @@ class Game extends Sprite
 			}
 		}
 		averagedPercent = zombiexS * 1.0 / zCounter * 1.0;
-		transfor.volume = (1-averagedPercent)*1.2;
+		transfor.volume = (1-averagedPercent)*1.6;
 		myChannel.soundTransform = transfor;
 	}
 	
